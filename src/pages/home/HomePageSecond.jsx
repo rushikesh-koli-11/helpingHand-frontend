@@ -8,6 +8,7 @@ import livesSaved from "../../images/whoAreWe/livesSaved.png";
 import expertSupport from "../../images/whoAreWe/expertSupport.png";
 import featuredIn from "../../images/featuredIn/ads.png";
 import footerImg from "../../images/footer/footer.png";
+import home2 from "../../images/home-2.png";
 import { FaFacebookSquare } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
@@ -40,7 +41,12 @@ const HomePageSecond = () => {
   
   return (
     <div>
-      <Container className="fundraiser-page" style={{ width: '100%', maxWidth: '100%', overflowX: 'hidden', paddingLeft: '15px', paddingRight: '15px' }}>
+      <Container className="fundraiser-page" style={{ 
+        backgroundImage: `url(${home2})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat'
+      }}>
         <Row className="align-items-center">
           <Col xs={12} md={7}>
             <h1 className="text-center text-md-start">Start a Fundraiser in three simple steps</h1>
@@ -91,7 +97,7 @@ const HomePageSecond = () => {
           </Col>
         </Row>
       </Container>
-      <Container className="home-page" style={{ width: '100%', maxWidth: '100%', overflowX: 'hidden', paddingLeft: '15px', paddingRight: '15px' }}>
+      <Container className="home-page">
         <h2 className="mt-5 text-center">
           Why Join <span className="green-text">Helping Hands?</span>
         </h2>
@@ -102,7 +108,7 @@ const HomePageSecond = () => {
           are.
         </p>
         <div className="video-container my-4">
-          <div className="video-responsive" style={{ position: "relative", paddingBottom: "56.25%", height: 0, overflow: "hidden", maxWidth: "100%" }}>
+          <div className="video-responsive">
             <iframe
               src="https://www.youtube.com/embed/IOgqKLMPAVc?si=B7UyAfu2W3AE2hIm"
               title="YouTube video player"
@@ -165,7 +171,7 @@ const HomePageSecond = () => {
               <div className="col-12 col-sm-6 col-md-4">
                 <div className="card" style={{ overflow: 'hidden', overflowY: 'hidden', overflowX: 'hidden', height: 'auto', minHeight: 'auto' }}>
                   <div className="card-body" style={{ overflow: 'hidden', overflowY: 'hidden', overflowX: 'hidden', height: 'auto', minHeight: 'auto' }}>
-                    <img src={donors} alt="Donors Icon" className="mb-3" style={{ width: "50px", height: "50px" }} />
+                    <img src={donors} alt="Donors Icon" className="mb-3" style={{ width: "50px", height: "50px", display: "block", objectFit: "contain" }} />
                     <h3 style={{ fontSize: "clamp(1rem, 2.5vw, 1.25rem)" }}>
                       4,21,908 <br />
                       <span className="info-about-whoarewe">
@@ -182,7 +188,7 @@ const HomePageSecond = () => {
                       src={livesSaved}
                       alt="Lives Saved Icon"
                       className="mb-3"
-                      style={{ width: "50px", height: "50px" }}
+                      style={{ width: "50px", height: "50px", display: "block", objectFit: "contain" }}
                     />
                     <h3 style={{ fontSize: "clamp(1rem, 2.5vw, 1.25rem)" }}>
                       1,40,000
@@ -201,7 +207,7 @@ const HomePageSecond = () => {
                       src={expertSupport}
                       alt="Support Icon"
                       className="mb-3"
-                      style={{ width: "50px", height: "50px" }}
+                      style={{ width: "50px", height: "50px", display: "block", objectFit: "contain" }}
                     />
                     <h3 style={{ fontSize: "clamp(1rem, 2.5vw, 1.25rem)" }}>
                       24x7
@@ -219,9 +225,9 @@ const HomePageSecond = () => {
       </div>
 
       {/* featured-in-section */}
-      <Container className="featured-in-section" style={{ width: '100%', maxWidth: '100%', overflowX: 'hidden', overflowY: 'hidden', marginBottom: '60px', paddingBottom: '40px', paddingTop: '40px' }}>
+      <Container className="featured-in-section">
         <h2 className="featured-in-title">Featured In</h2>
-        <img src={featuredIn} className="featured-image" alt="/" style={{ maxWidth: '100%', height: 'auto' }} />
+        <img src={featuredIn} className="featured-image" alt="Featured media logos" />
       </Container>
 
       {/* footer */}

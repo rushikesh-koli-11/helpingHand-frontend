@@ -49,7 +49,8 @@ function HomePage() {
       width: '100%',
       maxWidth: '100vw',
       overflowX: 'hidden',
-      position: 'relative'
+      position: 'relative',
+      backgroundAttachment: 'scroll'
     }}>
       {/* Overlay for better text readability on mobile */}
       <div className="home-banner-overlay"></div>
@@ -59,7 +60,7 @@ function HomePage() {
           <Col xs={12} md={6} className="d-none d-md-block">
             {/* Empty space for larger screens */}
           </Col>
-          <Col xs={12} md={6} className="d-flex flex-column justify-content-center gap-3 gap-md-4 text-center text-md-start">
+          <Col xs={12} md={6} className="d-flex flex-column justify-content-center gap-3 gap-md-4 text-center text-md-start" style={{ display: 'flex !important' }}>
             <h2 className="home-banner-heading mb-3 mb-md-4">Need Funds to Pay For <br className="d-none d-md-block" />a Medical Emergency or Social Cause?</h2>
             
             <div className="home-banner-stats d-flex flex-column flex-md-row justify-content-center justify-content-md-between my-3 my-md-4 gap-3 gap-md-0">

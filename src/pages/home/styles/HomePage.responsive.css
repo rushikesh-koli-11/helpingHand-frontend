@@ -9,6 +9,26 @@
   overflow-x: hidden;
   margin: 0;
   position: relative;
+  display: flex;
+  align-items: center;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-attachment: scroll !important;
+}
+
+@media (max-width: 767px) {
+  .home-container-one {
+    min-height: 100vh !important;
+    padding: 1.5rem 0.75rem;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-attachment: scroll !important;
+  }
 }
 
 @media (min-width: 768px) {
@@ -26,6 +46,16 @@
   bottom: 0;
   background: rgba(255, 255, 255, 0.85);
   z-index: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 767px) {
+  .home-banner-overlay {
+    background: rgba(255, 255, 255, 0.8);
+    display: block !important;
+  }
 }
 
 @media (min-width: 768px) {
@@ -44,6 +74,23 @@
 .home-banner-content {
   position: relative;
   z-index: 1;
+  width: 100%;
+}
+
+@media (max-width: 767px) {
+  .home-banner-content {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 1rem 0.75rem !important;
+  }
+
+  .home-banner-content .row {
+    margin: 0 !important;
+  }
+
+  .home-banner-content .col {
+    padding: 0.5rem !important;
+  }
 }
 
 /* Main heading */
@@ -203,20 +250,63 @@
 
 /* Better spacing on mobile */
 @media (max-width: 767px) {
+  .home-container-one {
+    display: flex !important;
+    align-items: center !important;
+    min-height: 100vh !important;
+  }
+
+  .home-banner-overlay {
+    display: block !important;
+    opacity: 1 !important;
+  }
+
   .home-banner-content {
-    padding: 1rem 0.5rem;
+    padding: 1rem 0.75rem;
+    width: 100% !important;
+    max-width: 100% !important;
+    display: block !important;
+    position: relative !important;
+    z-index: 1 !important;
   }
   
   .home-banner-heading {
     padding: 0 0.5rem;
+    display: block !important;
+    visibility: visible !important;
   }
   
   .home-banner-stats {
-    padding: 0 1rem;
+    padding: 0 0.5rem;
+    display: flex !important;
+    visibility: visible !important;
   }
   
   .home-banner-slogan {
     padding: 0 0.5rem;
+    display: block !important;
+    visibility: visible !important;
+  }
+
+  .home-banner-button {
+    display: block !important;
+    visibility: visible !important;
+  }
+
+  .home-banner-hindi {
+    display: block !important;
+    visibility: visible !important;
+  }
+
+  .home-banner-content .row .col {
+    display: flex !important;
+    flex-direction: column !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  .home-banner-content .row .col.d-none {
+    display: none !important;
   }
 }
 
