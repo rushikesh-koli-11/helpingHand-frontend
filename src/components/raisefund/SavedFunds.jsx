@@ -145,7 +145,7 @@ const SavedFunds = () => {
           userId: userId,
           fundraiserId: fundraiserId,
         };
-        await axios.post(API_ENDPOINTS.GET_SAVED_FUNDRAISER, saveData);
+        await axios.post(API_ENDPOINTS.POST_SAVED_FUNDRAISER, saveData);
 
         setSavedFundraisers((prev) => ({
           ...prev,

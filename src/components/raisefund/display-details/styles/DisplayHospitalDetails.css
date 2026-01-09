@@ -1,41 +1,74 @@
 .hospital-details-card {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
+    margin-bottom: 1.5rem;
   }
   
   .hospital-details-card:hover {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  .hospital-details-card .card-header {
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    padding: 1rem;
+  }
+
+  @media (min-width: 768px) {
+    .hospital-details-card .card-header {
+      padding: 1.25rem;
+    }
   }
   
   .detail-item {
     display: flex;
     align-items: flex-start;
     margin-bottom: 1.5rem;
+    flex-wrap: wrap;
   }
   
   .detail-icon {
-    font-size: 1.5rem;
-    margin-right: 1rem;
+    font-size: clamp(1.25rem, 3vw, 1.5rem);
+    margin-right: 0.75rem;
     color: #039695;
-    min-width: 30px;
+    min-width: 25px;
     text-align: center;
+  }
+
+  @media (min-width: 576px) {
+    .detail-icon {
+      margin-right: 1rem;
+      min-width: 30px;
+    }
   }
   
   .detail-label {
     font-weight: bold;
     margin-bottom: 0.25rem;
     color: #495057;
+    font-size: clamp(0.9rem, 2vw, 1rem);
   }
   
   .detail-value {
-    font-size: 1rem;
+    font-size: clamp(0.85rem, 1.8vw, 1rem);
     margin-bottom: 0;
     word-break: break-word;
+    width: 100%;
+  }
+
+  @media (min-width: 576px) {
+    .detail-value {
+      width: auto;
+    }
   }
   
   @media (max-width: 767px) {
     .detail-item {
       margin-bottom: 1.5rem;
+      flex-direction: column;
+    }
+
+    .detail-icon {
+      margin-bottom: 0.5rem;
     }
   }
   

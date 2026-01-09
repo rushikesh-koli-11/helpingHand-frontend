@@ -4,10 +4,11 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    margin: 0;
+    margin: 0 auto;
     max-width: 1440px;
     min-height: 100vh;
     width: 100%;
+    overflow-x: hidden;
   }
 
   @media (min-width: 576px) {
@@ -99,10 +100,12 @@
 
   h3{
     color: #039695;
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
   }
 
   .light-para{
     color: rgba(0, 0, 0, 0.50);
+    font-size: clamp(0.85rem, 2vw, 0.95rem);
   }
 
   .green-text {
@@ -110,7 +113,19 @@
   }
 
   .home-page {
-    padding: 20px;
+    padding: 1rem;
+  }
+
+  @media (min-width: 576px) {
+    .home-page {
+      padding: 1.5rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .home-page {
+      padding: 20px;
+    }
   }
   
   .video-container {
@@ -118,6 +133,24 @@
     justify-content: center;
     width: 100%;
     padding: 0 1rem;
+  }
+
+  .video-responsive {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .video-responsive iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
   }
 
   @media (min-width: 768px) {
@@ -192,28 +225,95 @@
     align-items: center;
   }
 
-  /* 3 */
-
- /* ImpactPage.css */
+  /* ImpactPage.css */
 .impact-section {
     text-align: center;
-    padding: 50px 0;
+    padding: 2rem 0;
+  }
+
+  @media (min-width: 576px) {
+    .impact-section {
+      padding: 3rem 0;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .impact-section {
+      padding: 50px 0;
+    }
   }
   
   .header-section {
     background-color: #039695;
     color: white;
   }
+
+  .header-section h1 {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    margin-bottom: 1rem;
+  }
+
+  .header-section h2 {
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+    margin-bottom: 1rem;
+  }
+
+  .header-section p {
+    font-size: clamp(0.9rem, 2vw, 1rem);
+  }
   
   .card {
     border: none;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    height: 100%;
+    height: auto;
+    min-height: auto;
+    transition: all 0.3s ease;
+    overflow: hidden !important;
+    overflow-y: hidden !important;
+    overflow-x: hidden !important;
+  }
+
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  .card-body {
+    overflow: hidden !important;
+    overflow-y: hidden !important;
+    overflow-x: hidden !important;
+    height: auto !important;
+    min-height: auto !important;
+    max-height: none !important;
+    padding: 1rem !important;
+  }
+
+  /* Remove any scrollbar styling */
+  .card-body::-webkit-scrollbar,
+  .card::-webkit-scrollbar,
+  .cardHeight::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    background: transparent !important;
+  }
+
+  /* For Firefox */
+  .card,
+  .card-body,
+  .cardHeight {
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
   }
   
   .card-body img {
     width: 50px;
     height: 50px;
+  }
+
+  .card-body h3 {
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    margin-bottom: 0.5rem;
   }
 
   .card-container{
@@ -237,30 +337,64 @@
 
   .my-5 {
     margin-top: 0 !important;
-    /* margin-bottom: 0 !important; */
-    
-}
+  }
 
 .cardHeight{
     padding: 10px;
     margin: 5px;
-    min-height: 140px;
+    min-height: auto;
     height: auto;
+    overflow: hidden !important;
+    overflow-y: hidden !important;
+    overflow-x: hidden !important;
+}
+
+/* Remove scrollbars from cardHeight */
+.cardHeight::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+.cardHeight {
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
 }
 
 @media (min-width: 576px) {
   .cardHeight {
-    height: 140px;
+    height: auto;
+    min-height: auto;
     margin: 10px;
+  }
+}
+
+@media (min-width: 768px) {
+  .cardHeight {
+    height: auto;
+    min-height: auto;
   }
 }
 
 .container-fluid{
     background-color: #039695;
+    padding: 1rem;
+}
+
+@media (min-width: 576px) {
+  .container-fluid {
+    padding: 1.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .container-fluid {
+    padding: 2rem;
+  }
 }
 
 .info-about-whoarewe{
-    font-size: medium;
+    font-size: clamp(0.85rem, 2vw, 1rem);
     color: rgba(0, 0, 0, 0.50);
 }
   
@@ -269,28 +403,55 @@
 /* FeaturedIn.css */
 .featured-in-section {
     text-align: center;
-    padding: 20px 0;
-    margin-bottom: 10px;
-    width: 1100px;
-  }
-  
-
-/* FeaturedIn.css */
-.featured-in-section {
+    padding: 40px 0;
+    margin-bottom: 60px;
+    width: 100%;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
     opacity: 1;
     transform: translateY(50px);
     transition: opacity 1s ease-out, transform 1s ease-out;
-    margin-bottom: 20px;
-    height: 200px;
+    min-height: 150px;
+    overflow-x: hidden !important;
+    overflow-y: hidden !important;
+  }
+
+  @media (min-width: 576px) {
+    .featured-in-section {
+      margin-bottom: 70px;
+      padding: 50px 0;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .featured-in-section {
+      margin-bottom: 80px;
+      padding: 60px 0;
+    }
+  }
+
+  @media (min-width: 576px) {
+    .featured-in-section {
+      min-height: 180px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .featured-in-section {
+      height: 200px;
+    }
   }
   
   .featured-in-section.visible {
     opacity: 1;
     transform: translateY(0);
   }
-  
-  
 
+  .featured-in-title {
+    font-size: clamp(1.25rem, 3vw, 1.75rem);
+    margin-bottom: 1rem;
+  }
   
   .featured-in-title::after {
     content: '';
@@ -316,15 +477,16 @@
     border: 1px solid black;
     border-top: 5px solid;
     border-bottom: 5px solid; 
-  border-image: linear-gradient(
-    to right, 
-    rgba(3, 150, 149, 0), 
-    rgba(3, 150, 149, 1), 
-    rgba(3, 150, 149, 0)
-  ) 1;
+    border-image: linear-gradient(
+      to right, 
+      rgba(3, 150, 149, 0), 
+      rgba(3, 150, 149, 1), 
+      rgba(3, 150, 149, 0)
+    ) 1;
+  }
 
   .border-gradient-bottom {
-    border-bottom: 5px solid; /* Bottom border */
+    border-bottom: 5px solid;
     border-image-source: linear-gradient(
       to right, 
       rgba(3, 150, 149, 0),
@@ -333,12 +495,32 @@
     );
     border-image-slice: 1;
   }
-}
 
 /* Footer.css */
 .footer{
     padding: 2rem 1rem;
     background-color: #003e3e;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden !important;
+    overflow-y: hidden !important;
+    margin: 0;
+    margin-top: 40px;
+    padding-top: 3rem;
+}
+
+@media (min-width: 576px) {
+  .footer {
+    margin-top: 50px;
+    padding-top: 3.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .footer {
+    margin-top: 60px;
+    padding-top: 4rem;
+  }
 }
 
 @media (min-width: 576px) {
@@ -412,6 +594,5 @@
       justify-content: flex-start;
     }
   }
-  
   
   

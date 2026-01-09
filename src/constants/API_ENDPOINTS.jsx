@@ -12,9 +12,12 @@ const API_ENDPOINTS = {
 
   // fundraisers
   GET_FUNDRAISER: `${BASE_URL}/fundraisers`,
+  POST_FUNDRAISER: `${BASE_URL}/fundraisers`, // Create fundraiser
   GET_FUNDRAISERS_BY_USER: (userId) => `${BASE_URL}/fundraisers/view-fundraisers/${userId}`,
   GET_FUNDRAISERS_BY_ID: (fundraiserId) => `${BASE_URL}/fundraisers/${fundraiserId}`,
+  DELETE_FUNDRAISER: (fundraiserId) => `${BASE_URL}/fundraisers/${fundraiserId}`,
   GET_SAVED_FUNDRAISER: `${BASE_URL}/saved-fundraisers`,
+  POST_SAVED_FUNDRAISER: `${BASE_URL}/saved-fundraisers`, // Save fundraiser
   GET_SAVED_FUNDRAISER_BY_SAVEID: (saveId) => `${BASE_URL}/saved-fundraisers/${saveId}`,
   GET_LATEST_FUNDRAISER: `${BASE_URL}/fundraisers/latest`,
 
@@ -27,33 +30,46 @@ const API_ENDPOINTS = {
   UPLOAD_FUNDRAISER_DETAILS: `${BASE_URL}/fundraiser-details/upload`,
 
   //patient-verifications
-  GET_PATIENT_VERIFICATIONS_BY_FUNDRAISERID: (fundraiserId) => `${BASE_URL}/patient-verifications/${fundraiserId}`,
+  POST_PATIENT_VERIFICATION: `${BASE_URL}/patient-verifications`, // Create patient verification
+  GET_PATIENT_VERIFICATIONS_BY_FUNDRAISERID: (fundraiserId) => `${BASE_URL}/patient-verifications/fundraiser/${fundraiserId}`,
   GET_PATIENT_VERIFICATIONS: `${BASE_URL}/patient-verifications`,
+  UPDATE_PATIENT_VERIFICATION: (id) => `${BASE_URL}/patient-verifications/${id}`,
+  DELETE_PATIENT_VERIFICATION: (id) => `${BASE_URL}/patient-verifications/${id}`,
 
   //medical-documents
   // Backend routes: GET /medical-documents/fetch/{fundraiserId} and PUT /medical-documents/update/{fundraiserId}
   GET_MEDICAL_DOCUMENTS_BY_FUNDRAISERID: (fundraiserId) => `${BASE_URL}/medical-documents/fetch/${fundraiserId}`,
   UPDATE_MEDICAL_DOCUMENTS_BY_FUNDRAISERID: (fundraiserId) => `${BASE_URL}/medical-documents/update/${fundraiserId}`,
   UPLOAD_MEDICAL_DOCUMENTS: `${BASE_URL}/medical-documents/upload`,
-  POST_HOSPITAL_DETAILS: `${BASE_URL}/hospital-details`,
 
   //hospital-details
+  POST_HOSPITAL_DETAILS: `${BASE_URL}/hospital-details`, // Create hospital details
   GET_HOSPITAL_DETAILS_BY_FUNDRAISERID: (fundraiserId) => `${BASE_URL}/hospital-details/fundraiser/${fundraiserId}`,
+  GET_HOSPITAL_DETAILS_BY_ID: (id) => `${BASE_URL}/hospital-details/${id}`,
   UPDATE_HOSPITAL_DETAILS_BY_ID: (hospitalDetailsId) => `${BASE_URL}/hospital-details/${hospitalDetailsId}`,
+  DELETE_HOSPITAL_DETAILS: (id) => `${BASE_URL}/hospital-details/${id}`,
 
   //bank-details
+  POST_BANK_DETAILS: `${BASE_URL}/bank-details`, // Create bank details
   GET_BANK_DETAILS_BY_FUNDRAISERID: (fundraiserId) => `${BASE_URL}/bank-details/fundraiser/${fundraiserId}`,
   GET_BANK_DETAILS_BY_ID: (bankDetailsId) => `${BASE_URL}/bank-details/${bankDetailsId}`,
   GET_BANK_DETAILS: `${BASE_URL}/bank-details`,
+  UPDATE_BANK_DETAILS: (bankId) => `${BASE_URL}/bank-details/${bankId}`,
+  DELETE_BANK_DETAILS: (bankId) => `${BASE_URL}/bank-details/${bankId}`,
 
   //background-details
+  POST_BACKGROUND_DETAILS: `${BASE_URL}/backgrounds`, // Create background
   GET_BACKGROUND_DETAILS_BY_FUNDRAISERID: (fundraiserId) => `${BASE_URL}/backgrounds/fundraiser/${fundraiserId}`,
   GET_BACKGROUND_DETAILS_BY_BACKGROUNDID: (backgroundId) => `${BASE_URL}/backgrounds/${backgroundId}`,
   GET_BACKGROUND_DETAILS: `${BASE_URL}/backgrounds`,
+  UPDATE_BACKGROUND_DETAILS: (backgroundId) => `${BASE_URL}/backgrounds/${backgroundId}`,
+  DELETE_BACKGROUND_DETAILS: (backgroundId) => `${BASE_URL}/backgrounds/${backgroundId}`,
 
   //updates
   POST_UPDATES: `${BASE_URL}/updates`,
+  GET_UPDATES: `${BASE_URL}/updates`,
   GET_UPDATES_BY_FUNDRAISERID: (fundraiserId) => `${BASE_URL}/updates/fundraiser/${fundraiserId}`,
+  GET_UPDATE_BY_ID: (updateId) => `${BASE_URL}/updates/${updateId}`,
 
   //endpoint
   GET_ENDPOINT_BY_ID: (endpoint, id) => `${BASE_URL}/${endpoint}/${id}`,
@@ -62,9 +78,12 @@ const API_ENDPOINTS = {
   DOWNLOAD_RECEIPT_BY_DONATIONID: (donationId) => `${BASE_URL}/receipt/generate/${donationId}`,
 
   //donations
+  POST_DONATION: `${BASE_URL}/donations`, // Create donation
   GET_DONATIONS_BY_USERID: (userId) => `${BASE_URL}/donations/user/${userId}`,
   GET_DONATIONS_BY_DONATIONID: (donationId) => `${BASE_URL}/donations/${donationId}`,
+  GET_DONATIONS_BY_FUNDRAISERID: (fundraiserId) => `${BASE_URL}/donations/fundraiser/${fundraiserId}`,
   DONATION_SUCCESS_URL: (donationId) => `${BASE_URL}/donations/success?donationId=${donationId}`,
+  DONATION_CANCEL_URL: (donationId) => `${BASE_URL}/donations/cancel?donationId=${donationId}`,
 
   //opean AI
   POST_OPENAI: "https://api.openai.com/v1/chat/completions",

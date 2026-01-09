@@ -1,38 +1,73 @@
 .patient-verification-card {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
+    margin-bottom: 1.5rem;
   }
   
   .patient-verification-card:hover {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  .patient-verification-card .card-header {
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    padding: 1rem;
+  }
+
+  @media (min-width: 768px) {
+    .patient-verification-card .card-header {
+      padding: 1.25rem;
+    }
   }
   
   .verification-item {
     display: flex;
     align-items: center;
     margin-bottom: 1rem;
+    flex-wrap: wrap;
   }
   
   .verification-icon {
-    font-size: 2rem;
-    margin-right: 1rem;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    margin-right: 0.75rem;
     color: #039695;
+    min-width: 30px;
+  }
+
+  @media (min-width: 576px) {
+    .verification-icon {
+      margin-right: 1rem;
+    }
   }
   
   .verification-label {
     font-weight: bold;
     margin-bottom: 0.25rem;
     color: #495057;
+    font-size: clamp(0.9rem, 2vw, 1rem);
   }
   
   .verification-value {
-    font-size: 1.1rem;
+    font-size: clamp(0.95rem, 2vw, 1.1rem);
     margin-bottom: 0;
+    word-break: break-word;
+    width: 100%;
+  }
+
+  @media (min-width: 576px) {
+    .verification-value {
+      width: auto;
+    }
   }
   
   @media (max-width: 767px) {
     .verification-item {
       margin-bottom: 1.5rem;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .verification-icon {
+      margin-bottom: 0.5rem;
     }
   }
   

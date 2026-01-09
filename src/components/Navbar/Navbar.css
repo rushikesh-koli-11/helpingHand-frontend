@@ -92,12 +92,14 @@
   .navbar-custom .navbar-nav {
     margin-top: 1rem;
     text-align: center;
+    width: 100%;
   }
 
   .navbar-custom .navbar-nav .nav-link {
     padding: 0.75rem 1rem;
     text-align: center;
     display: block;
+    width: 100%;
   }
 
   .navbar-custom .navbar-nav .nav-link svg {
@@ -114,12 +116,6 @@
   .dropdown-menu {
     width: 100%;
     text-align: center;
-  }
-
-  #basic-navbar-nav {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
   }
 }
 
@@ -171,25 +167,77 @@
 }
 
 .navbar-custom .navbar-toggler {
-  border: none;
-  padding: 0.25rem 0.75rem;
-  font-size: 1.25rem;
-  transition: all 0.3s ease;
+  border: none !important;
+  padding: 0.25rem 0.75rem !important;
+  font-size: 1.25rem !important;
+  transition: all 0.3s ease !important;
+  cursor: pointer !important;
+  background-color: transparent !important;
 }
 
 .navbar-custom .navbar-toggler:focus {
-  outline: none;
-  box-shadow: none;
+  outline: none !important;
+  box-shadow: none !important;
 }
 
-#basic-navbar-nav{
-  display: flex;
+.navbar-custom .navbar-toggler:hover {
+  opacity: 0.8;
+}
+
+.navbar-custom .navbar-toggler:active {
+  transform: scale(0.95);
+}
+
+/* Desktop: horizontal navbar - always visible, hide toggle */
+@media (min-width: 992px) {
+  .navbar-custom .navbar-toggler {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+  }
+  
+  /* Ensure navbar collapse is always shown on desktop */
+  .navbar-custom .navbar-collapse {
+    display: flex !important;
+    flex-basis: auto !important;
+  }
+  
+  #basic-navbar-nav {
+    display: flex !important;
     flex-direction: row;
     justify-content: end;
+  }
+}
+
+/* Mobile: vertical navbar - toggleable, show toggle */
+@media (max-width: 991px) {
+  .navbar-custom .navbar-toggler {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+  
+  #basic-navbar-nav {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Mobile: hide collapse by default, show when expanded */
+  .navbar-custom .navbar-collapse:not(.show) {
+    display: none !important;
+  }
+  
+  .navbar-custom .navbar-collapse.show {
+    display: flex !important;
+  }
 }
 
 .navbar-custom .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(3, 150, 149, 0.8)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(3, 150, 149, 0.8)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+  width: 1.5em !important;
+  height: 1.5em !important;
+  display: inline-block !important;
 }
 
 

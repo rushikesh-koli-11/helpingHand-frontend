@@ -28,6 +28,14 @@ const PaymentCancel = () => {
         setFundraiserId(response.data.fundraiserId);
       });
 
+    // Mark donation as cancelled
+    if (donationId) {
+      axios.get(API_ENDPOINTS.DONATION_CANCEL_URL(donationId))
+        .catch((error) => {
+          console.error("Error marking donation as cancelled:", error);
+        });
+    }
+
     const timer = setTimeout(() => {
       setShowToast(false);
     }, 5000);

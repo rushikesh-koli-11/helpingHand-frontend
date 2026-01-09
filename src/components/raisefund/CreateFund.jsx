@@ -3,7 +3,8 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { Typography } from "@mui/material";
-import "./details/styles/CreateFund.css";
+import { Container } from "react-bootstrap";
+import "./CreateFund.responsive.css";
 import "../styles/common-styles.css";
 import { API_ENDPOINTS } from "../../constants/API_ENDPOINTS";
 
@@ -60,13 +61,13 @@ const CreateFundraiserForm = () => {
       currentAmount: Number.parseFloat(currentAmount),
       userId,
       status: "pending",
-      mobileNumber,
+      mobileNumber: Number.parseInt(mobileNumber), // Convert to number for backend Long type
     };
 
 
 
     try {
-      await axios.post(API_ENDPOINTS.GET_FUNDRAISER, fundraiserDTO);
+      await axios.post(API_ENDPOINTS.POST_FUNDRAISER, fundraiserDTO);
       Swal.fire("Success", "Fundraiser created successfully", "success");
       resetForm();
       navigate("/fundraiser-details");
@@ -119,18 +120,19 @@ const CreateFundraiserForm = () => {
 
   return (
     <div
-      className="create-fund fixfromtop container animate__animated animate__fadeIn"
-      style={{ marginTop: "70px" }}
+      className="create-fund fixfromtop animate__animated animate__fadeIn"
+      style={{ marginTop: "70px", width: '100%', maxWidth: '100vw', overflowX: 'hidden' }}
     >
-      <Typography variant="h4" align="center" gutterBottom color="#005c5b">
-        Create Fund
-      </Typography>
-      {error && <Typography color="error">{error}</Typography>}
-      <form
-        onSubmit={handleSubmit}
-        className="createfund-outer-div needs-validation p-3"
-        noValidate
-      >
+      <Container style={{ width: '100%', maxWidth: '100%', overflowX: 'hidden' }}>
+        <Typography variant="h4" align="center" gutterBottom color="#005c5b">
+          Create Fund
+        </Typography>
+        {error && <Typography color="error">{error}</Typography>}
+        <form
+          onSubmit={handleSubmit}
+          className="createfund-outer-div needs-validation p-3"
+          noValidate
+        >
         <div className="mb-3">
           <Typography variant="subtitle1">Title</Typography>
           <input
@@ -206,6 +208,7 @@ const CreateFundraiserForm = () => {
           </button>
         </div>
       </form>
+      </Container>
     </div>
   );
 };

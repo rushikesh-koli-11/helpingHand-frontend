@@ -1,41 +1,69 @@
 .donation-history-container {
-    padding: 2rem;
+    padding: 1rem;
     max-width: 800px;
     margin: 0 auto;
     font-family: Arial, sans-serif;
   }
 
+  @media (min-width: 576px) {
+    .donation-history-container {
+      padding: 1.5rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .donation-history-container {
+      padding: 2rem;
+    }
+  }
+
   .donation-history-header {
     text-align: center;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     color: #039695;
+    font-size: clamp(1.5rem, 4vw, 2rem);
   }
 
   .no-donations {
     text-align: center;
     color: #666;
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    padding: 2rem;
   }
 
   .donation-card {
     background: #f9f9f9;
     border: 1px solid #ddd;
     border-radius: 8px;
-    padding: 1.5rem;
+    padding: 1rem;
     margin-bottom: 1.5rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  @media (min-width: 576px) {
+    .donation-card {
+      padding: 1.5rem;
+    }
   }
 
   .donation-card p {
     margin: 0.5rem 0;
     color: #333;
+    font-size: clamp(0.9rem, 2vw, 1rem);
   }
 
-  .button-group {
+  .button-group-2 {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    gap: 0.75rem;
     margin-top: 1rem;
+  }
+
+  @media (min-width: 576px) {
+    .button-group-2 {
+      flex-direction: row;
+      justify-content: space-between;
+    }
   }
 
   .view-details-button,
@@ -43,15 +71,24 @@
     background-color: #039695;
     color: #fff;
     border: none;
-    width: 50%;
-    padding: 0.5rem 1rem;
+    width: 100%;
+    padding: 0.75rem 1rem;
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    font-size: 0.9rem;
+    font-size: clamp(0.85rem, 2vw, 0.9rem);
+  }
+
+  @media (min-width: 576px) {
+    .view-details-button,
+    .download-receipt-button {
+      width: 48%;
+    }
   }
 
   .view-details-button:hover,
   .download-receipt-button:hover {
     background-color: #026d60;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }

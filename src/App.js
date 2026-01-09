@@ -38,9 +38,9 @@ function App() {
     <Router>
       <div
         className="app-raisefund"
-        style={{ display: "flex", height: "100%" }}
+        style={{ display: "flex", height: "100%", width: "100%", maxWidth: "100vw", overflowX: "hidden" }}
       >
-        <div className="content" style={{ display: "flex" }}>
+        <div className="content" style={{ display: "flex", width: "100%", maxWidth: "100vw", overflowX: "hidden" }}>
           <Suspense fallback={<div>Loading...</div>}>
             <Routes>
               <Route

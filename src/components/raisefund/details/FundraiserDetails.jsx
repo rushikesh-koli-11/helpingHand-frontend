@@ -199,8 +199,8 @@ const FundraiserDetails = () => {
   return (
     <div className="fundraiser-form-container fixfromtop">
       <form className="fundraiser-form">
-        <div className="row">
-          <div className="col-md-6">
+        <div className="row g-3">
+          <div className="col-12 col-md-6">
             <TextField
               label="Patient's Name"
               name="patientName"
@@ -210,7 +210,7 @@ const FundraiserDetails = () => {
               disabled={!editMode}
             />
           </div>
-          <div className="col-md-4">
+          <div className="col-12 col-md-4">
             <TextField
               label="Patient's Age"
               name="patientAge"
@@ -221,7 +221,7 @@ const FundraiserDetails = () => {
               disabled={!editMode}
             />
           </div>
-          <div className="col-md-2">
+          <div className="col-12 col-md-2">
             <FormControl fullWidth disabled={!editMode}>
               <InputLabel>Patient's Gender</InputLabel>
               <Select
@@ -237,8 +237,8 @@ const FundraiserDetails = () => {
             </FormControl>
           </div>
         </div>
-        <div className="row">
-          <div className="col-md-6">
+        <div className="row g-3">
+          <div className="col-12 col-md-6">
             <TextField
               label="Medical Condition"
               name="medicalCondition"
@@ -248,7 +248,7 @@ const FundraiserDetails = () => {
               disabled={!editMode}
             />
           </div>
-          <div className="col-md-6">
+          <div className="col-12 col-md-6">
             <TextField
               label="Remaining Amount"
               name="remainingAmount"
@@ -259,8 +259,8 @@ const FundraiserDetails = () => {
             />
           </div>
         </div>
-        <div className="row video-img">
-          <div className="col-md-6">
+        <div className="row video-img g-3">
+          <div className="col-12 col-md-6">
             <TextField
               label="Video Appeal (YouTube Link)"
               name="videoAppeal"
@@ -270,7 +270,7 @@ const FundraiserDetails = () => {
               disabled={!editMode}
             />
           </div>
-          <div className="upload-img-div col-md-3">
+          <div className="upload-img-div col-12 col-md-3">
             <Button
               className="upload-img-button"
               variant="contained"
@@ -297,13 +297,14 @@ const FundraiserDetails = () => {
             </Button>
           </div>
           {uploadedFileName && (
-            <div className="col-md-3">
-              <Typography variant="body2">
+            <div className="col-12 col-md-3">
+              <Typography variant="body2" style={{ fontSize: "clamp(0.85rem, 1.8vw, 0.95rem)" }}>
                 Uploaded File: {uploadedFileName}{" "}
                 <Button
                   color="primary"
                   size="small"
                   onClick={() => setIsImageViewerOpen(true)}
+                  style={{ fontSize: "clamp(0.75rem, 1.6vw, 0.85rem)" }}
                 >
                   View Image
                 </Button>
@@ -311,7 +312,7 @@ const FundraiserDetails = () => {
             </div>
           )}
         </div>
-        <div className="col-md-12">
+        <div className="col-12">
           <TextField
             label="Story"
             name="story"

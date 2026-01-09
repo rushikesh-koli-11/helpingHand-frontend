@@ -1,0 +1,228 @@
+/* HomePage Banner - Responsive CSS using Bootstrap */
+
+/* Banner container */
+.home-container-one {
+  min-height: 100vh;
+  padding: 2rem 1rem;
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+  margin: 0;
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .home-container-one {
+    padding: 3rem 5rem;
+  }
+}
+
+/* Overlay for better text readability on mobile */
+.home-banner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.85);
+  z-index: 0;
+}
+
+@media (min-width: 768px) {
+  .home-banner-overlay {
+    background: rgba(255, 255, 255, 0.7);
+  }
+}
+
+@media (min-width: 992px) {
+  .home-banner-overlay {
+    background: rgba(255, 255, 255, 0.5);
+  }
+}
+
+/* Banner content wrapper */
+.home-banner-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* Main heading */
+.home-banner-heading {
+  font-size: clamp(1.5rem, 5vw, 2.5rem);
+  font-weight: bold;
+  line-height: 1.3;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .home-banner-heading {
+    font-size: clamp(1.75rem, 4vw, 2.25rem);
+    margin-bottom: 2rem;
+    line-height: 1.4;
+  }
+}
+
+/* Statistics section */
+.home-banner-stats {
+  margin: 1.5rem 0;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .home-banner-stats {
+    margin: 2rem 0;
+    gap: 0;
+  }
+}
+
+.home-banner-stats .green-text {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-weight: bold;
+  color: #039695;
+  margin-bottom: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .home-banner-stats .green-text {
+    font-size: clamp(1.75rem, 3.5vw, 2.25rem);
+    margin-bottom: 0.75rem;
+  }
+}
+
+.home-banner-stats .light-text {
+  font-size: clamp(0.75rem, 2vw, 0.9rem);
+  color: rgba(0, 0, 0, 0.53);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+@media (min-width: 768px) {
+  .home-banner-stats .light-text {
+    font-size: clamp(0.85rem, 1.8vw, 0.95rem);
+  }
+}
+
+/* Slogan text */
+.home-banner-slogan {
+  font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+  line-height: 1.6;
+  color: #039695;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .home-banner-slogan {
+    font-size: clamp(1rem, 2vw, 1.15rem);
+    margin-bottom: 1.5rem;
+  }
+}
+
+.home-banner-slogan b {
+  font-size: clamp(1.1rem, 3vw, 1.4rem);
+  font-weight: bold;
+}
+
+@media (min-width: 768px) {
+  .home-banner-slogan b {
+    font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+  }
+}
+
+/* CTA Button */
+.home-banner-button {
+  background-color: #039695;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 14px 32px;
+  font-size: clamp(1rem, 2.5vw, 1.15rem);
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  box-shadow: 0 4px 12px rgba(3, 150, 149, 0.3);
+}
+
+@media (min-width: 768px) {
+  .home-banner-button {
+    width: auto;
+    padding: 16px 40px;
+    font-size: clamp(1.05rem, 2vw, 1.2rem);
+    margin: 0;
+    max-width: none;
+  }
+}
+
+.home-banner-button:hover {
+  background-color: #027e7d;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(3, 150, 149, 0.4);
+}
+
+.home-banner-button:active {
+  transform: translateY(0);
+}
+
+/* Hindi text */
+.home-banner-hindi {
+  font-size: clamp(0.85rem, 2vw, 0.95rem);
+  color: #039695;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .home-banner-hindi {
+    font-size: clamp(0.9rem, 1.8vw, 1rem);
+    text-align: left;
+    margin-top: 1.5rem;
+  }
+}
+
+/* Green text utility */
+.green-text {
+  color: #039695;
+  font-size: clamp(0.9rem, 2vw, 1rem);
+}
+
+/* Light text utility */
+.light-text {
+  color: rgba(0, 0, 0, 0.53);
+  font-weight: 700;
+  font-size: clamp(0.85rem, 1.8vw, 0.95rem);
+}
+
+/* Ensure no overflow */
+.home-container-one * {
+  max-width: 100%;
+}
+
+/* Better spacing on mobile */
+@media (max-width: 767px) {
+  .home-banner-content {
+    padding: 1rem 0.5rem;
+  }
+  
+  .home-banner-heading {
+    padding: 0 0.5rem;
+  }
+  
+  .home-banner-stats {
+    padding: 0 1rem;
+  }
+  
+  .home-banner-slogan {
+    padding: 0 0.5rem;
+  }
+}
+
+/* Desktop: better alignment */
+@media (min-width: 992px) {
+  .home-banner-content {
+    padding: 2rem 0;
+  }
+}

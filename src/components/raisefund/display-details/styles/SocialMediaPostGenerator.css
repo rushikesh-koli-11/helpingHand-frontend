@@ -4,49 +4,101 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
+    padding: 1rem;
     width: 100%;
+  }
+
+  @media (min-width: 576px) {
+    .social-post-gradient-background {
+      padding: 1.5rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .social-post-gradient-background {
+      padding: 20px;
+    }
   }
   
   .social-post-card {
     background-color: rgba(255, 255, 255, 0.9);
     border-radius: 15px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    padding: 30px;
+    padding: 1.5rem;
     max-width: 600px;
     width: 100%;
+  }
+
+  @media (min-width: 576px) {
+    .social-post-card {
+      padding: 2rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .social-post-card {
+      padding: 30px;
+    }
   }
   
   .social-post-title {
     color: #039695;
-    margin-bottom: 20px;
+    margin-bottom: 1.5rem;
     font-weight: bold;
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    text-align: center;
+  }
+
+  @media (min-width: 768px) {
+    .social-post-title {
+      margin-bottom: 20px;
+      text-align: left;
+    }
   }
   
   .styled-button {
-    padding: 10px;
+    padding: 12px 24px;
     background-color: #039695 !important;
     color: white !important;
+    width: 100%;
+    max-width: 300px;
+    font-size: clamp(0.9rem, 2vw, 1rem);
+  }
+
+  @media (min-width: 576px) {
+    .styled-button {
+      width: 300px;
+    }
   }
   
   .styled-button:hover {
     background-color: #017373;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
   
   .post-content {
     margin: 20px 0;
-    height: 300px;
+    min-height: 200px;
+    max-height: 400px;
     width: 100%;
     border: 2px solid #039695;
     border-radius: 10px;
-    padding: 15px;
+    padding: 1rem;
     overflow: auto;
     word-wrap: break-word;
     white-space: pre-wrap;
     background-color: #f0f8ff;
     font-family: "Arial", sans-serif;
-    font-size: 14px;
+    font-size: clamp(0.85rem, 2vw, 14px);
     line-height: 1.6;
+  }
+
+  @media (min-width: 768px) {
+    .post-content {
+      height: 300px;
+      padding: 15px;
+    }
   }
   
   .animate__animated {
@@ -55,6 +107,14 @@
   
   .social-post-btn {
     transition: all 0.3s ease;
+    width: 100%;
+    max-width: 300px;
+  }
+
+  @media (min-width: 576px) {
+    .social-post-btn {
+      width: 300px;
+    }
   }
   
   .social-post-btn:hover {

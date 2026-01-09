@@ -19,6 +19,7 @@
     cursor: pointer;
     font-size: clamp(0.9rem, 2vw, 1rem);
     padding: 0.5rem 1rem !important;
+    transition: all 0.3s ease;
 }
 
 @media (min-width: 576px) {
@@ -30,6 +31,8 @@
 .main-button:hover{
     color: white !important;
     background-color: #006363 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .main-button-with-mediumsize{
@@ -41,6 +44,7 @@
     width: 100% !important;
     max-width: 150px !important;
     font-size: clamp(0.9rem, 2vw, 1rem);
+    transition: all 0.3s ease;
 }
 
 @media (min-width: 576px) {
@@ -52,6 +56,8 @@
 .main-button-with-mediumsize:hover{
     color: white !important;
     background-color: #006363 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 Button.submit-button{
@@ -63,6 +69,7 @@ Button.submit-button{
     width: 100% !important;
     max-width: 300px !important;
     font-size: clamp(0.9rem, 2vw, 1rem);
+    transition: all 0.3s ease;
 }
 
 @media (min-width: 576px) {
@@ -73,14 +80,53 @@ Button.submit-button{
 
 Button.submit-button:hover{
     background-color: green !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .theme-colour{
     color: white;
     background-color: #039695;
+    transition: all 0.3s ease;
 }
 
 .theme-colour:hover{
     color: white;
     background-color: #007373;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive utilities */
+@media (max-width: 575px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+/* Responsive form controls */
+.form-control, .form-select, input, textarea, select {
+  font-size: clamp(0.9rem, 2vw, 1rem) !important;
+}
+
+/* Responsive headings */
+h1 { font-size: clamp(1.5rem, 4vw, 2.5rem) !important; }
+h2 { font-size: clamp(1.25rem, 3vw, 2rem) !important; }
+h3 { font-size: clamp(1.1rem, 2.5vw, 1.5rem) !important; }
+h4 { font-size: clamp(1rem, 2.5vw, 1.25rem) !important; }
+h5 { font-size: clamp(0.95rem, 2vw, 1.1rem) !important; }
+h6 { font-size: clamp(0.9rem, 1.8vw, 1rem) !important; }
+
+/* Responsive spacing */
+@media (max-width: 575px) {
+  .mb-4, .mb-5 {
+    margin-bottom: 1rem !important;
+  }
+  .mt-4, .mt-5 {
+    margin-top: 1rem !important;
+  }
+  .p-3, .p-4, .p-5 {
+    padding: 1rem !important;
+  }
 }

@@ -4,4 +4,11 @@
     cursor: not-allowed !important;
     opacity: 0.6;
   }
+
+  @media (max-width: 575px) {
+    .Generate-social-media-button {
+      font-size: clamp(0.75rem, 1.8vw, 0.85rem);
+      padding: 0.5rem;
+    }
+  }
   

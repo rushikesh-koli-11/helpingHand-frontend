@@ -1,0 +1,260 @@
+/* Global Overflow Fix - Prevents horizontal scrolling */
+html, body {
+  overflow-x: hidden !important;
+  width: 100% !important;
+  max-width: 100vw !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  position: relative !important;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Prevent any element from causing horizontal overflow */
+.container,
+.container-fluid,
+.row,
+[class*="col-"] {
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+}
+
+/* Ensure all Bootstrap containers respect viewport width */
+.container {
+  width: 100%;
+  max-width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1320px;
+  }
+}
+
+/* Fix for Bootstrap row negative margins */
+.row {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+.row::before,
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Ensure images don't cause overflow */
+img {
+  max-width: 100% !important;
+  height: auto !important;
+}
+
+/* Fix for any fixed or absolute positioned elements */
+[style*="position: fixed"],
+[style*="position: absolute"] {
+  max-width: 100vw !important;
+}
+
+/* Prevent horizontal scroll on all pages */
+#root,
+.app-raisefund,
+.content {
+  overflow-x: hidden !important;
+  width: 100% !important;
+  max-width: 100vw !important;
+}
+
+/* Fix for Bootstrap containers */
+.container,
+.container-fluid {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Ensure footer and all sections don't overflow */
+footer,
+.footer,
+section,
+main {
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+}
+
+/* Fix for any element with fixed width that might cause overflow */
+[style*="width"] {
+  max-width: 100vw !important;
+}
+
+/* Ensure Bootstrap rows don't cause overflow */
+.row {
+  margin-left: -15px;
+  margin-right: -15px;
+  max-width: calc(100% + 30px);
+}
+
+.row > * {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Fix for any element that might extend beyond viewport */
+* {
+  max-width: 100%;
+}
+
+/* Exception for specific elements that need to be full width */
+html, body, #root, .app-raisefund, .content {
+  max-width: 100vw !important;
+  overflow-x: hidden !important;
+}
+
+/* Fix for viewport units that might cause overflow */
+[style*="100vw"],
+[style*="100%"] {
+  max-width: 100vw !important;
+}
+
+/* Ensure all Bootstrap Container components don't overflow */
+.container,
+.container-fluid,
+.container-sm,
+.container-md,
+.container-lg,
+.container-xl,
+.container-xxl {
+  width: 100% !important;
+  max-width: 100% !important;
+  padding-left: 15px !important;
+  padding-right: 15px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  overflow-x: hidden !important;
+}
+
+/* Fix Bootstrap row negative margins - prevent overflow */
+.row {
+  margin-left: -15px;
+  margin-right: -15px;
+  max-width: 100%;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Ensure row doesn't cause horizontal scroll */
+.container .row,
+.container-fluid .row {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Ensure all columns don't overflow */
+[class*="col-"] {
+  padding-left: 15px;
+  padding-right: 15px;
+  max-width: 100%;
+}
+
+/* Ensure all sections and containers respect viewport */
+section, main, article, aside, header, footer {
+  max-width: 100%;
+  overflow-x: hidden;
+  overflow-y: visible;
+}
+
+/* Remove scrollbars from cards and containers */
+.card,
+.card-body,
+[class*="card"],
+.cardHeight {
+  overflow: hidden !important;
+  overflow-y: hidden !important;
+  overflow-x: hidden !important;
+}
+
+/* Hide scrollbars on cards */
+.card::-webkit-scrollbar,
+.card-body::-webkit-scrollbar,
+.cardHeight::-webkit-scrollbar,
+[class*="card"]::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  background: transparent !important;
+}
+
+/* For Firefox - hide scrollbars */
+.card,
+.card-body,
+.cardHeight,
+[class*="card"] {
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+
+/* Prevent scrollbars on Bootstrap containers */
+.container,
+.container-fluid,
+[class*="container"] {
+  overflow-x: hidden !important;
+}
+
+/* Remove scrollbars from rows */
+.row {
+  overflow-x: hidden !important;
+}
+
+/* Ensure no scrollbars on body/html */
+html, body {
+  overflow-y: auto;
+  overflow-x: hidden !important;
+}
+
+/* Hide scrollbars but allow scrolling when needed */
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: none;
+}
+
+/* But allow scrolling on main page */
+html {
+  overflow-y: auto;
+  overflow-x: hidden;
+}

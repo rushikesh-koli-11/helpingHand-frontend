@@ -1,44 +1,103 @@
 .fundraiser-updates {
     max-width: 800px;
     margin: auto;
-    padding-top: 20px; /* Adds space at the top */
-    padding-bottom: 20px; /* Adds space at the bottom */
+    padding: 1rem;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+@media (min-width: 576px) {
+  .fundraiser-updates {
+    padding: 1.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .fundraiser-updates {
+    padding: 2rem;
+  }
 }
 
 .timeline {
     position: relative;
-    padding: 40px 0; /* Space above and below the timeline */
+    padding: 20px 0;
+}
+
+@media (min-width: 576px) {
+  .timeline {
+    padding: 30px 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .timeline {
+    padding: 40px 0;
+  }
 }
 
 .timeline::before {
     content: "";
     position: absolute;
-    top: 20px; /* Adds spacing at the top */
-    bottom: 20px; /* Adds spacing at the bottom */
-    left: 40px; /* Keeps line on the left */
+    top: 20px;
+    bottom: 20px;
+    left: 20px;
     width: 2px;
     background: #039695;
+}
+
+@media (min-width: 576px) {
+  .timeline::before {
+    left: 30px;
+  }
+}
+
+@media (min-width: 768px) {
+  .timeline::before {
+    left: 40px;
+  }
 }
 
 .timeline-item {
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     position: relative;
     width: 100%;
+}
+
+@media (min-width: 768px) {
+  .timeline-item {
+    margin-bottom: 30px;
+  }
 }
 
 .timeline-content {
     background: #00e4e32e;
     border: 1px solid #039695;
     border-radius: 5px;
-    padding: 20px;
+    padding: 1rem;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
     position: relative;
     transition: all 0.3s ease;
-    margin-left: 80px; /* Moves content to the right */
-    width: calc(100% - 100px); /* Ensures it doesn’t overlap the line */
+    margin-left: 50px;
+    width: calc(100% - 70px);
+}
+
+@media (min-width: 576px) {
+  .timeline-content {
+    margin-left: 60px;
+    width: calc(100% - 80px);
+    padding: 1.25rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .timeline-content {
+    margin-left: 80px;
+    width: calc(100% - 100px);
+    padding: 20px;
+  }
 }
 
 .timeline-content:hover {
@@ -50,38 +109,40 @@
     content: "";
     position: absolute;
     top: 20px;
-    left: 32px; /* Positions circle correctly */
-    width: 16px;
-    height: 16px;
+    left: 12px;
+    width: 12px;
+    height: 12px;
     background: #ffffff;
     border: 3px solid #039695;
     border-radius: 50%;
+}
+
+@media (min-width: 576px) {
+  .timeline-item::before {
+    left: 22px;
+    width: 14px;
+    height: 14px;
+  }
+}
+
+@media (min-width: 768px) {
+  .timeline-item::before {
+    left: 32px;
+    width: 16px;
+    height: 16px;
+  }
 }
 
 .date {
     font-weight: bold;
     color: #039695;
     margin-bottom: 10px;
+    font-size: clamp(0.9rem, 2vw, 1rem);
 }
 
 .time {
     display: block;
-    font-size: 0.8em;
+    font-size: clamp(0.75rem, 1.8vw, 0.8rem);
     color: #00ffff;
     margin-top: 10px;
-}
-
-@media (max-width: 767px) {
-    .timeline::before {
-        left: 20px; /* Adjust for smaller screens */
-    }
-
-    .timeline-content {
-        margin-left: 50px;
-        width: calc(100% - 70px);
-    }
-
-    .timeline-item::before {
-        left: 12px;
-    }
 }

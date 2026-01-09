@@ -5,7 +5,8 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { FaFacebook, FaTwitter, FaInstagram, FaUpload } from "react-icons/fa";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./Profile.css";
+import { Container, Row, Col } from "react-bootstrap";
+import "./Profile.responsive.css";
 import Swal from "sweetalert2";
 import { API_ENDPOINTS } from "../../constants/API_ENDPOINTS";
 import { CircularProgress } from "@mui/material";
@@ -181,39 +182,41 @@ const Profile = () => {
   }
 
   return (
-    <div className="profile-container fade-in">
-      <div className="profile-card">
-        <div className="profile-left">
-          <div className="profile-image-container">
-            <img
-              src={
-                previewUrl ||
-                "https://static.vecteezy.com/system/resources/previews/021/548/095/non_2x/default-profile-picture-avatar-user-avatar-icon-person-icon-head-icon-profile-picture-icons-default-anonymous-user-male-and-female-businessman-photo-placeholder-social-network-avatar-portrait-free-vector.jpg"
-              }
-              alt="Profile"
-              className="profile-image"
-            />
-          </div>
-          <h1 className="profile-name">{userData.name}</h1>
-          <br />
-          <div className="button-group">
-            {!editMode && (
-              <button
-                className="btn-creative btn-edit m-0"
-                onClick={handleEditClick}
-              >
-                Edit Profile
-              </button>
-            )}
-            <Link
-              to={`/donationHistory/${userId}`}
-              className="btn-creative btn-donation"
-            >
-              Donation History
-            </Link>
-          </div>
-        </div>
-        <div className="profile-right">
+    <div className="profile-container fade-in" style={{ width: '100%', maxWidth: '100vw', overflowX: 'hidden' }}>
+      <Container fluid className="p-0" style={{ width: '100%', maxWidth: '100%', overflowX: 'hidden' }}>
+        <div className="profile-card">
+          <Row className="g-0" style={{ width: '100%', margin: 0 }}>
+            <Col xs={12} md={4} className="profile-left">
+              <div className="profile-image-container">
+                <img
+                  src={
+                    previewUrl ||
+                    "https://static.vecteezy.com/system/resources/previews/021/548/095/non_2x/default-profile-picture-avatar-user-avatar-icon-person-icon-head-icon-profile-picture-icons-default-anonymous-user-male-and-female-businessman-photo-placeholder-social-network-avatar-portrait-free-vector.jpg"
+                  }
+                  alt="Profile"
+                  className="profile-image"
+                />
+              </div>
+              <h1 className="profile-name">{userData.name}</h1>
+              <br />
+              <div className="button-group">
+                {!editMode && (
+                  <button
+                    className="btn-creative btn-edit m-0"
+                    onClick={handleEditClick}
+                  >
+                    Edit Profile
+                  </button>
+                )}
+                <Link
+                  to={`/donationHistory/${userId}`}
+                  className="btn-creative btn-donation"
+                >
+                  Donation History
+                </Link>
+              </div>
+            </Col>
+            <Col xs={12} md={8} className="profile-right">
           {editMode ? (
             <div className="edit-form slide-in">
               <h2>Edit Profile</h2>
@@ -302,8 +305,10 @@ const Profile = () => {
               </div>
             </div>
           )}
+            </Col>
+          </Row>
         </div>
-      </div>
+      </Container>
       {/* <GoogleSignIn /> */}
     </div>
   );

@@ -5,10 +5,10 @@ import { useNavigate } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import Swal from "sweetalert2";
 import "sweetalert2/dist/sweetalert2.min.css";
+import { Container, Row, Col } from "react-bootstrap";
 import { API_ENDPOINTS } from "../../constants/API_ENDPOINTS";
 
-import "./scss/login.scss";
-import "./styles/Login.css";
+import "./Login.responsive.css";
 
 
 const LoginForm = () => {
@@ -85,52 +85,60 @@ const LoginForm = () => {
   return (
     <>
       <ToastContainer />
-      <div className="login">
-        <div className="login-card">
-          <div className="left">
-            <h1>Helping Hands</h1>
-            <p>
-              Please log in using your credentials to access your personal
-              dashboard, manage your fundraisers, and stay connected with the
-              inspiring stories and updates from the causes you support.
-            </p>
-            <span>Don't you have an account?</span>
-            <button
-              onClick={() => {
-                navigate("/register");
-              }}
-            >
-              Register
-            </button>
+      <div className="login-page-wrapper">
+        <Container fluid className="p-0" style={{ width: '100%', maxWidth: '100%', overflowX: 'hidden' }}>
+          <div className="login-card-container">
+            <Row className="g-0" style={{ width: '100%', margin: 0 }}>
+              {/* Left Panel - Info Section */}
+              <Col xs={12} md={6} className="login-info-panel">
+                <h1>Helping Hands</h1>
+                <p>
+                  Please log in using your credentials to access your personal
+                  dashboard, manage your fundraisers, and stay connected with the
+                  inspiring stories and updates from the causes you support.
+                </p>
+                <span>Don't you have an account?</span>
+                <button
+                  className="login-btn-secondary"
+                  onClick={() => {
+                    navigate("/register");
+                  }}
+                >
+                  Register
+                </button>
+              </Col>
+              
+              {/* Right Panel - Form Section */}
+              <Col xs={12} md={6} className="login-form-panel">
+                <h1>Login</h1>
+                {error && <p className="login-error">{error}</p>}
+                <form className="login-form" onSubmit={handleLogin}>
+                  <div className="login-form-group">
+                    <input
+                      type="email"
+                      className="login-form-input"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      placeholder="Email"
+                      required
+                    />
+                  </div>
+                  <div className="login-form-group">
+                    <input
+                      type="password"
+                      className="login-form-input"
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
+                      placeholder="Password"
+                      required
+                    />
+                  </div>
+                  <button type="submit" className="login-btn-primary">Login</button>
+                </form>
+              </Col>
+            </Row>
           </div>
-          <div className="right">
-            <h1>Login</h1>
-            {error && <p className="error">{error}</p>}
-            <form onSubmit={handleLogin}>
-              <div className="form-group">
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Email"
-                  required
-                />
-              </div>
-              <div className="form-group">
-                <input
-                  type="password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  placeholder="Password"
-                  required
-                />
-              </div>
-
-
-              <button type="submit">Login</button>
-            </form>
-          </div>
-        </div>
+        </Container>
       </div>
     </>
   );

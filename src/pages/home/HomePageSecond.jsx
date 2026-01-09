@@ -40,7 +40,7 @@ const HomePageSecond = () => {
   
   return (
     <div>
-      <Container className="fundraiser-page">
+      <Container className="fundraiser-page" style={{ width: '100%', maxWidth: '100%', overflowX: 'hidden', paddingLeft: '15px', paddingRight: '15px' }}>
         <Row className="align-items-center">
           <Col xs={12} md={7}>
             <h1 className="text-center text-md-start">Start a Fundraiser in three simple steps</h1>
@@ -91,7 +91,7 @@ const HomePageSecond = () => {
           </Col>
         </Row>
       </Container>
-      <Container className="home-page">
+      <Container className="home-page" style={{ width: '100%', maxWidth: '100%', overflowX: 'hidden', paddingLeft: '15px', paddingRight: '15px' }}>
         <h2 className="mt-5 text-center">
           Why Join <span className="green-text">Helping Hands?</span>
         </h2>
@@ -102,14 +102,14 @@ const HomePageSecond = () => {
           are.
         </p>
         <div className="video-container my-4">
-          <div className="video-responsive">
+          <div className="video-responsive" style={{ position: "relative", paddingBottom: "56.25%", height: 0, overflow: "hidden", maxWidth: "100%" }}>
             <iframe
               src="https://www.youtube.com/embed/IOgqKLMPAVc?si=B7UyAfu2W3AE2hIm"
               title="YouTube video player"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerPolicy="strict-origin-when-cross-origin"
               allowFullScreen
-              style={{ border: "none" }}
+              style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", border: "none" }}
             ></iframe>
           </div>
         </div>
@@ -145,9 +145,9 @@ const HomePageSecond = () => {
         </Row>
       </Container>
 
-      <div className="impact-section">
-        <header className="header-section">
-          <div className="container-fluid text-white text-center py-5">
+      <div className="impact-section" style={{ width: '100%', maxWidth: '100%', overflowX: 'hidden' }}>
+        <header className="header-section" style={{ width: '100%', maxWidth: '100%', overflowX: 'hidden' }}>
+          <div className="container-fluid text-white text-center py-5" style={{ width: '100%', maxWidth: '100%', overflowX: 'hidden' }}>
             <h1>Who Are We?</h1>
             <h2>
               Helping Hands is a Crowdfunding Platform based out of India.
@@ -159,14 +159,14 @@ const HomePageSecond = () => {
           </div>
           <div
             className="containerBack my-5"
-            style={{ height: "80px", marginTop: "opx" }}
+            style={{ marginTop: "0px", width: '100%', maxWidth: '100%', overflowX: 'hidden', overflowY: 'hidden', paddingLeft: '15px', paddingRight: '15px' }}
           >
-            <div className="cardHeight row">
-              <div className="col-sm-4">
-                <div className="card">
-                  <div className="card-body">
-                    <img src={donors} alt="Donors Icon" className="mb-3" />
-                    <h3>
+            <div className="cardHeight row g-3" style={{ overflow: 'hidden', overflowY: 'hidden', overflowX: 'hidden' }}>
+              <div className="col-12 col-sm-6 col-md-4">
+                <div className="card" style={{ overflow: 'hidden', overflowY: 'hidden', overflowX: 'hidden', height: 'auto', minHeight: 'auto' }}>
+                  <div className="card-body" style={{ overflow: 'hidden', overflowY: 'hidden', overflowX: 'hidden', height: 'auto', minHeight: 'auto' }}>
+                    <img src={donors} alt="Donors Icon" className="mb-3" style={{ width: "50px", height: "50px" }} />
+                    <h3 style={{ fontSize: "clamp(1rem, 2.5vw, 1.25rem)" }}>
                       4,21,908 <br />
                       <span className="info-about-whoarewe">
                         members donating monthly
@@ -175,15 +175,16 @@ const HomePageSecond = () => {
                   </div>
                 </div>
               </div>
-              <div className="col-sm-4">
-                <div className="card">
-                  <div className="card-body">
+              <div className="col-12 col-sm-6 col-md-4">
+                <div className="card" style={{ overflow: 'hidden', overflowY: 'hidden', overflowX: 'hidden', height: 'auto', minHeight: 'auto' }}>
+                  <div className="card-body" style={{ overflow: 'hidden', overflowY: 'hidden', overflowX: 'hidden', height: 'auto', minHeight: 'auto' }}>
                     <img
                       src={livesSaved}
                       alt="Lives Saved Icon"
                       className="mb-3"
+                      style={{ width: "50px", height: "50px" }}
                     />
-                    <h3>
+                    <h3 style={{ fontSize: "clamp(1rem, 2.5vw, 1.25rem)" }}>
                       1,40,000
                       <br />
                       <span className="info-about-whoarewe">
@@ -193,15 +194,16 @@ const HomePageSecond = () => {
                   </div>
                 </div>
               </div>
-              <div className="col-sm-4">
-                <div className="card">
-                  <div className="card-body">
+              <div className="col-12 col-sm-6 col-md-4">
+                <div className="card" style={{ overflow: 'hidden', overflowY: 'hidden', overflowX: 'hidden', height: 'auto', minHeight: 'auto' }}>
+                  <div className="card-body" style={{ overflow: 'hidden', overflowY: 'hidden', overflowX: 'hidden', height: 'auto', minHeight: 'auto' }}>
                     <img
                       src={expertSupport}
                       alt="Support Icon"
                       className="mb-3"
+                      style={{ width: "50px", height: "50px" }}
                     />
-                    <h3>
+                    <h3 style={{ fontSize: "clamp(1rem, 2.5vw, 1.25rem)" }}>
                       24x7
                       <br />
                       <span className="info-about-whoarewe">
@@ -217,16 +219,16 @@ const HomePageSecond = () => {
       </div>
 
       {/* featured-in-section */}
-      <Container className="featured-in-section">
+      <Container className="featured-in-section" style={{ width: '100%', maxWidth: '100%', overflowX: 'hidden', overflowY: 'hidden', marginBottom: '60px', paddingBottom: '40px', paddingTop: '40px' }}>
         <h2 className="featured-in-title">Featured In</h2>
-        <img src={featuredIn} className="featured-image" alt="/" />
+        <img src={featuredIn} className="featured-image" alt="/" style={{ maxWidth: '100%', height: 'auto' }} />
       </Container>
 
       {/* footer */}
-      <footer className="footer text-white py-4">
-        <div className="container">
-          <div className="row">
-            <div className="col-md-3">
+      <footer className="footer text-white py-4" style={{ width: '100%', maxWidth: '100vw', overflowX: 'hidden', overflowY: 'hidden', margin: 0, marginTop: '40px', paddingTop: '3rem' }}>
+        <div className="container" style={{ width: '100%', maxWidth: '100%', overflowX: 'hidden', margin: '0 auto', paddingLeft: '15px', paddingRight: '15px' }}>
+          <div className="row g-3 g-md-4">
+            <div className="col-12 col-sm-6 col-md-3">
               <h5
                 style={{ borderBottom: "1px solid #ffffff4f", height: "40px" }}
               >
@@ -271,17 +273,16 @@ const HomePageSecond = () => {
                 </span>
               </p>
             </div>
-            <div className="col-md-2">
+            <div className="col-12 col-sm-6 col-md-2">
               <h5>Causes</h5>
               <ul className="list-unstyled">
                 <li>Medical crowdfunding</li>
                 <li>Cancer Crowdfunding</li>
                 <li>Transplant Crowdfunding</li>
-
                 <li>Child Welfare</li>
               </ul>
             </div>
-            <div className="col-md-2">
+            <div className="col-12 col-sm-6 col-md-2">
               <h5>How it works?</h5>
               <ul className="list-unstyled">
                 <li>Fundraising for NGOs</li>
@@ -294,7 +295,7 @@ const HomePageSecond = () => {
                 <li>Find Hospitals</li>
               </ul>
             </div>
-            <div className="col-md-2">
+            <div className="col-12 col-sm-6 col-md-2">
               <h5>About Us</h5>
               <ul className="list-unstyled">
                 <li>Team Helping Hands</li>
@@ -306,7 +307,7 @@ const HomePageSecond = () => {
                 <li>Is Helping Hands Genuine?</li>
               </ul>
             </div>
-            <div className="col-md-3">
+            <div className="col-12 col-sm-6 col-md-3">
               <h5>Support</h5>
               <ul className="list-unstyled">
                 <li>Medical Finance</li>
@@ -320,13 +321,13 @@ const HomePageSecond = () => {
             </div>
           </div>
           <div className="row mt-4">
-            <div className="col text-center">
-              <img src={footerImg} alt="Visa" className="payment-icon" />
+            <div className="col-12 text-center">
+              <img src={footerImg} alt="Visa" className="payment-icon" style={{ maxWidth: "100%", height: "auto" }} />
             </div>
           </div>
           <div className="row mt-4">
-            <div className="col text-center">
-              <p>
+            <div className="col-12 text-center">
+              <p style={{ fontSize: "clamp(0.75rem, 1.8vw, 0.875rem)", wordWrap: "break-word" }}>
                 &copy; 2025 Helping Hands. All Rights Reserved. | Terms of Use |
                 Privacy Policy
               </p>

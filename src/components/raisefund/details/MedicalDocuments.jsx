@@ -214,16 +214,16 @@ const MedicalDocuments = () => {
   return (
     <div className="medical-documents-container form-div">
       <form className="medical-documents-form">
-        <div className="row">
+        <div className="row g-3">
           {[
             "medicalEstimate",
             "consentLetterFromPatient",
             "medicalReports",
             "otherDocs",
           ].map((imageKey, index) => (
-            <div className="col-md-6 d-flex" key={index}>
+            <div className="col-12 col-md-6 d-flex flex-column flex-sm-row gap-2" key={index}>
               <Button
-                className="documents-button w-50 mb-3"
+                className="documents-button mb-3 mb-sm-0"
                 component="label"
                 fullWidth
                 sx={{
@@ -231,6 +231,7 @@ const MedicalDocuments = () => {
                   backgroundColor: "#039695",
                   "&:hover": { backgroundColor: "#028678" },
                   "&.Mui-disabled": { backgroundColor: "#A5D6D3" },
+                  minWidth: { xs: "100%", sm: "50%" },
                 }}
                 disabled={isEditMode}
               >
@@ -243,12 +244,13 @@ const MedicalDocuments = () => {
                 />
               </Button>
               {uploadedFileNames[imageKey] && (
-                <Typography className="d-flex flex-column justify-content-start align-items-end w-50">
-                  <div className="d-flex" style={{fontSize: "small"}}>Uploaded File: {uploadedFileNames[imageKey]}</div>
+                <Typography className="d-flex flex-column justify-content-start align-items-start align-items-sm-end" sx={{ minWidth: { xs: "100%", sm: "50%" } }}>
+                  <div className="d-flex" style={{fontSize: "clamp(0.75rem, 1.6vw, 0.875rem)", wordBreak: "break-word"}}>Uploaded File: {uploadedFileNames[imageKey]}</div>
                   <Button
                     color="primary"
                     size="small"
                     onClick={() => handleViewImage(imageKey)}
+                    style={{ fontSize: "clamp(0.75rem, 1.6vw, 0.85rem)" }}
                   >
                     View Image
                   </Button>

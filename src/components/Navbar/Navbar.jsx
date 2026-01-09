@@ -15,6 +15,7 @@ import "./Navbar.css";
 const Navbar = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [navExpanded, setNavExpanded] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 992);
   const navigate = useNavigate();
   const location = useLocation();
   const [userId, setUserId] = useState("");
@@ -52,13 +53,46 @@ const Navbar = () => {
     setNavExpanded(false);
   };
 
+  const handleToggle = (nextState) => {
+    // Only allow toggle on mobile/tablet (below lg breakpoint)
+    if (isMobile) {
+      setNavExpanded(nextState !== undefined ? nextState : !navExpanded);
+    } else {
+      // On desktop, always keep it closed (menu should be visible without toggle)
+      setNavExpanded(false);
+    }
+  };
+
+  // Handle window resize and initialize mobile state
+  useEffect(() => {
+    const handleResize = () => {
+      const mobile = window.innerWidth < 992;
+      setIsMobile(mobile);
+      // On desktop, ensure menu is not expanded (it should be visible without toggle)
+      // On mobile, keep current state
+      if (!mobile) {
+        setNavExpanded(false);
+      }
+    };
+
+    // Initialize: set mobile state
+    const initialMobile = window.innerWidth < 992;
+    setIsMobile(initialMobile);
+    if (!initialMobile) {
+      setNavExpanded(false);
+    }
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
     <BootstrapNavbar
       expand="lg"
       className="navbar-custom"
       fixed="top"
-      expanded={navExpanded}
-      onToggle={() => setNavExpanded((prev) => !prev)}
+      expanded={isMobile ? navExpanded : false}
+      onToggle={handleToggle}
     >
       <BootstrapNavbar.Brand as={Link} to="/home" className="brand">
         <img
@@ -73,10 +107,14 @@ const Navbar = () => {
 
       <BootstrapNavbar.Toggle
         aria-controls="basic-navbar-nav"
-        onClick={() => setNavExpanded((prev) => !prev)}
+        aria-label="Toggle navigation"
+        aria-expanded={navExpanded}
       />
 
-      <BootstrapNavbar.Collapse id="basic-navbar-nav">
+      <BootstrapNavbar.Collapse 
+        id="basic-navbar-nav" 
+        in={isMobile ? navExpanded : true}
+      >
         <Nav className="ml-auto">
           <Nav.Link
             as={Link}

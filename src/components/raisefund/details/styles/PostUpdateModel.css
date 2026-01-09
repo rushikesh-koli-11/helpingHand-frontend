@@ -5,26 +5,59 @@
   .post-update-modal .modal-content {
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    margin: 1rem;
+  }
+
+  @media (min-width: 576px) {
+    .post-update-modal .modal-content {
+      margin: 1.75rem auto;
+      max-width: 500px;
+    }
   }
   
   .post-update-modal .modal-header {
     border-bottom: none;
+    padding: 1rem;
     padding-bottom: 0;
+  }
+
+  @media (min-width: 576px) {
+    .post-update-modal .modal-header {
+      padding: 1.5rem;
+      padding-bottom: 0;
+    }
   }
   
   .post-update-modal .modal-title {
     font-weight: 600;
     color: #333;
+    font-size: clamp(1.1rem, 2.5vw, 1.25rem);
   }
   
   .post-update-modal .modal-body {
+    padding: 1rem;
     padding-top: 0.5rem;
+  }
+
+  @media (min-width: 576px) {
+    .post-update-modal .modal-body {
+      padding: 1.5rem;
+      padding-top: 0.5rem;
+    }
   }
   
   .post-update-modal textarea.form-control {
     border: 1px solid #ced4da;
     border-radius: 8px;
     resize: none;
+    font-size: clamp(0.9rem, 2vw, 1rem);
+    min-height: 120px;
+  }
+
+  @media (min-width: 576px) {
+    .post-update-modal textarea.form-control {
+      min-height: 150px;
+    }
   }
   
   .post-update-modal textarea.form-control:focus {
@@ -34,7 +67,35 @@
   
   .post-update-modal .modal-footer {
     border-top: none;
+    padding: 1rem;
     padding-top: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  @media (min-width: 576px) {
+    .post-update-modal .modal-footer {
+      flex-direction: row;
+      justify-content: flex-end;
+      padding: 1.5rem;
+      padding-top: 0;
+    }
+  }
+  
+  .post-update-modal .btn-primary,
+  .post-update-modal .btn-secondary {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-size: clamp(0.9rem, 2vw, 1rem);
+  }
+
+  @media (min-width: 576px) {
+    .post-update-modal .btn-primary,
+    .post-update-modal .btn-secondary {
+      width: auto;
+      padding: 0.5rem 1.5rem;
+    }
   }
   
   .post-update-modal .btn-primary {

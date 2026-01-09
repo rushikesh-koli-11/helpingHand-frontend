@@ -1,18 +1,19 @@
 import React from "react";
 import { MdLocationPin, MdOutlineMailOutline } from "react-icons/md";
-import "./ContactUs.css";
+import { Container, Row, Col } from "react-bootstrap";
+import "./ContactUs.responsive.css";
 import "../styles/common-styles.css";
 import { FaPhoneAlt } from "react-icons/fa";
 
 const ContactForm = () => {
   return (
-    <div className="contact-container w-100">
-      <main>
-        <div className="container py-5">
-          <div className="row g-5">
+    <div className="contact-container w-100" style={{ width: '100%', maxWidth: '100vw', overflowX: 'hidden' }}>
+      <main style={{ width: '100%', maxWidth: '100%', overflowX: 'hidden' }}>
+        <Container className="py-5" style={{ width: '100%', maxWidth: '100%', overflowX: 'hidden' }}>
+          <Row className="g-5" style={{ width: '100%', margin: 0 }}>
             {/* Contact Information Block */}
-            <div className="col-xl-6">
-              <div className="row row-cols-md-2 g-4">
+            <Col xl={6} xs={12}>
+              <Row className="row-cols-md-2 g-4">
                 <div
                   className="aos-item"
                   data-aos="fade-up"
@@ -45,7 +46,7 @@ const ContactForm = () => {
                     </div>
                   </div>
                 </div>
-              </div>
+              </Row>
               <div
                 className="aos-item mt-4"
                 data-aos="fade-up"
@@ -61,10 +62,10 @@ const ContactForm = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </Col>
 
             {/* Contact Form */}
-            <div className="col-xl-6">
+            <Col xl={6} xs={12}>
               <h2 className="pb-4">Leave a message</h2>
               <div className="row g-4">
                 <div className="col-6 mb-3">
@@ -98,9 +99,9 @@ const ContactForm = () => {
               <button type="button" className="main-button-with-mediumsize">
                 Send Message
               </button>
-            </div>
-          </div>
-        </div>
+            </Col>
+          </Row>
+        </Container>
       </main>
     </div>
   );

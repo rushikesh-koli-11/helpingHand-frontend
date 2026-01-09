@@ -153,8 +153,8 @@ const HospitalDetails = () => {
   return (
     <div className="form-div">
       <form style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
-        <div className="row">
-          <div className="col-md-6">
+        <div className="row g-3">
+          <div className="col-12 col-md-6">
             <TextField
               label="Hospital Name"
               name="hospitalName"
@@ -164,7 +164,7 @@ const HospitalDetails = () => {
               disabled={!isEditable}
             />
           </div>
-          <div className="col-md-6">
+          <div className="col-12 col-md-6">
             <TextField
               label="Patient's UHID Number"
               name="patientUHIDNumber"
@@ -176,8 +176,8 @@ const HospitalDetails = () => {
             />
           </div>
         </div>
-        <div className="row">
-          <div className="col-md-6">
+        <div className="row g-3">
+          <div className="col-12 col-md-6">
             <TextField
               label="Consulting Doctor"
               name="consultingDoctor"
@@ -187,7 +187,7 @@ const HospitalDetails = () => {
               disabled={!isEditable}
             />
           </div>
-          <div className="col-md-6">
+          <div className="col-12 col-md-6">
             <TextField
               label="Doctor's Phone Number"
               name="doctorPhoneNumber"

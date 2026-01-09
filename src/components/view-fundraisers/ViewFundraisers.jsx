@@ -5,7 +5,8 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Typography, CircularProgress, Pagination } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import "./styles/ViewFundraisers.css";
+import { Container } from "react-bootstrap";
+import "./ViewFundraisers.responsive.css";
 import "../styles/common-styles.css";
 import Swal from "sweetalert2";
 import FundraiserCard from "../raisefund/FundraiserCard";
@@ -230,7 +231,7 @@ const ViewFundraisers = () => {
           fundraiserId: fundraiserId,
         };
 
-        await axios.post(API_ENDPOINTS.GET_SAVED_FUNDRAISER, saveData);
+        await axios.post(API_ENDPOINTS.POST_SAVED_FUNDRAISER, saveData);
         setSavedFundraisers((prev) => ({
           ...prev,
           [fundraiserId]: true,
@@ -268,9 +269,10 @@ const ViewFundraisers = () => {
   return (
     <div
       className="fundraisers-container fixfromtop"
-      style={{ minHeight: "100vh" }}
+      style={{ minHeight: "100vh", width: '100%', maxWidth: '100vw', overflowX: 'hidden' }}
     >
-      {error && <Typography color="error">{error}</Typography>}
+      <Container fluid style={{ width: '100%', maxWidth: '100%', overflowX: 'hidden' }}>
+        {error && <Typography color="error">{error}</Typography>}
 
       {/* Search input field */}
       <div className="search-container">
@@ -322,6 +324,7 @@ const ViewFundraisers = () => {
           onPageChange={handlePageChange}
         />
       </div>
+      </Container>
     </div>
   );
 };

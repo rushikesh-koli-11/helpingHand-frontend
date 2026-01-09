@@ -62,27 +62,112 @@ const BankDetails = () => {
     fetchBankDetails();
   }, [fundraiserId]);
 
-  // checl all details are submitted or not
+  // check all details are submitted or not
   const checkAllDetailsSubmitted = async () => {
-    const endpoints = [
-      "bank-details",
-      "fundraiser-details",
-      "medical-documents/fetch",
-      "backgrounds",
-      "hospital-details",
-      "patient-verifications",
+    if (!fundraiserId) {
+      Swal.fire("Error", "Fundraiser ID not found. Please create a fundraiser first.", "error");
+      return;
+    }
+
+    const checks = [
+      {
+        name: "bank details",
+        check: async () => {
+          try {
+            const response = await axios.get(API_ENDPOINTS.GET_BANK_DETAILS_BY_FUNDRAISERID(fundraiserId));
+            // Check if response has data and at least one identifying field
+            return response.data && 
+                   (response.data.bankId || response.data.id || 
+                    response.data.accountNumber || response.data.bankName);
+          } catch (error) {
+            // 404 or other error means data doesn't exist
+            return false;
+          }
+        }
+      },
+      {
+        name: "fundraiser details",
+        check: async () => {
+          try {
+            const response = await axios.get(API_ENDPOINTS.GET_FUNDRAISER_DETAILS_BY_FUNDRAISERID(fundraiserId));
+            // Check if response has data and at least one identifying field
+            return response.data && 
+                   (response.data.id || response.data.fundraiserId || 
+                    response.data.patientName || response.data.story);
+          } catch (error) {
+            // 404 or other error means data doesn't exist
+            return false;
+          }
+        }
+      },
+      {
+        name: "medical documents",
+        check: async () => {
+          try {
+            const response = await axios.get(API_ENDPOINTS.GET_MEDICAL_DOCUMENTS_BY_FUNDRAISERID(fundraiserId));
+            // Check if response has data and at least one identifying field
+            return response.data && 
+                   (response.data.medicalDocumentId || response.data.id || 
+                    response.data.fundraiserId || response.data.additionalInformation);
+          } catch (error) {
+            // 404 or other error means data doesn't exist
+            return false;
+          }
+        }
+      },
+      {
+        name: "backgrounds",
+        check: async () => {
+          try {
+            const response = await axios.get(API_ENDPOINTS.GET_BACKGROUND_DETAILS_BY_FUNDRAISERID(fundraiserId));
+            // Check if response has data and at least one identifying field
+            return response.data && 
+                   (response.data.backgroundId || response.data.id || 
+                    response.data.relationWithPatient || response.data.monthlyIncomeOfPatientsFamily);
+          } catch (error) {
+            // 404 or other error means data doesn't exist
+            return false;
+          }
+        }
+      },
+      {
+        name: "hospital details",
+        check: async () => {
+          try {
+            const response = await axios.get(API_ENDPOINTS.GET_HOSPITAL_DETAILS_BY_FUNDRAISERID(fundraiserId));
+            // Check if response has data and at least one identifying field
+            return response.data && 
+                   (response.data.hospitalDetailsId || response.data.id || 
+                    response.data.hospitalName || response.data.patientUHIDNumber);
+          } catch (error) {
+            // 404 or other error means data doesn't exist
+            return false;
+          }
+        }
+      },
+      {
+        name: "patient verifications",
+        check: async () => {
+          try {
+            const response = await axios.get(API_ENDPOINTS.GET_PATIENT_VERIFICATIONS_BY_FUNDRAISERID(fundraiserId));
+            // Check if response has data and at least one identifying field
+            return response.data && 
+                   (response.data.verificationId || response.data.id || 
+                    response.data.adhaarNumber || response.data.panNumber);
+          } catch (error) {
+            // 404 or other error means data doesn't exist
+            return false;
+          }
+        }
+      }
     ];
 
     let missingDetails = [];
 
-    for (let endpoint of endpoints) {
-      try {
-        const response = await axios.get(
-          API_ENDPOINTS.GET_ENDPOINT_BY_ID(endpoint, fundraiserId)
-        );
-        if (!response.data) missingDetails.push(endpoint.replace(/-/g, " "));
-      } catch (error) {
-        missingDetails.push(endpoint.replace(/-/g, " "));
+    for (let checkItem of checks) {
+      const exists = await checkItem.check();
+      if (!exists) {
+        missingDetails.push(checkItem.name);
       }
     }
 
@@ -194,8 +279,8 @@ const BankDetails = () => {
   return (
     <div className="form-div">
       <form style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
-        <div className="row">
-          <div className="col-md-6">
+        <div className="row g-3">
+          <div className="col-12 col-md-6">
             <TextField
               label="Account Holder Name"
               name="accountHolderName"
@@ -205,7 +290,7 @@ const BankDetails = () => {
               disabled={!isEditable}
             />
           </div>
-          <div className="col-md-6">
+          <div className="col-12 col-md-6">
             <TextField
               label="Account Number"
               name="accountNumber"
@@ -217,8 +302,8 @@ const BankDetails = () => {
             />
           </div>
         </div>
-        <div className="row">
-          <div className="col-md-6">
+        <div className="row g-3">
+          <div className="col-12 col-md-6">
             <TextField
               label="Bank Name"
               name="bankName"
@@ -228,7 +313,7 @@ const BankDetails = () => {
               disabled={!isEditable}
             />
           </div>
-          <div className="col-md-6">
+          <div className="col-12 col-md-6">
             <TextField
               label="IFSC Code"
               name="ifscCode"
@@ -239,8 +324,8 @@ const BankDetails = () => {
             />
           </div>
         </div>
-        <div className="row">
-          <div className="col-md-6">
+        <div className="row g-3">
+          <div className="col-12 col-md-6">
             <TextField
               label="Account Type"
               name="accountType"
@@ -255,7 +340,7 @@ const BankDetails = () => {
               <MenuItem value="business">Business</MenuItem>
             </TextField>
           </div>
-          <div className="col-md-6">
+          <div className="col-12 col-md-6">
             <TextField
               label="Branch Name"
               name="branchName"
@@ -266,8 +351,8 @@ const BankDetails = () => {
             />
           </div>
         </div>
-        <div className="row">
-          <div className="col-md-12">
+        <div className="row g-3">
+          <div className="col-12">
             <TextField
               label="Branch Address"
               name="branchAddress"
@@ -278,7 +363,7 @@ const BankDetails = () => {
             />
           </div>
         </div>
-        <div className="d-flex  align-items-center gap-3">
+        <div className="d-flex flex-column flex-sm-row align-items-center gap-3">
           {isEditable ? (
             <Button
               className="submit-button"
