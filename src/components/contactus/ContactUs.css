@@ -3,15 +3,31 @@
   background: rgb(255,255,255);
   background: linear-gradient(31deg, rgba(255,255,255,1) 0%, rgb(99, 255, 255) 99%);
   height: fit-content;
+  width: 100%;
+  padding: 1rem;
+}
+
+@media (min-width: 768px) {
+  .contact-container {
+    padding: 2rem;
+  }
 }
 
 .info-box {
   background: #ffffff14;
-  padding: 15px;
+  padding: 12px;
   border: 1px solid black;
   border-radius: 8px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   transition: 0.3s;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 576px) {
+  .info-box {
+    padding: 15px;
+    margin-bottom: 0;
+  }
 }
 
 .info-box:hover {
@@ -25,22 +41,38 @@
 }
 
 .info-icon {
-  font-size: 20px;
+  font-size: clamp(18px, 2.5vw, 20px);
   margin-right: 10px;
 }
 
 .info-title {
   font-weight: 600;
-  font-size: 18px;
+  font-size: clamp(16px, 2.5vw, 18px);
+}
+
+.map-container {
+  width: 100%;
+  height: 300px;
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .map-container {
+    height: 400px;
+  }
 }
 
 .map-container iframe {
   border-radius: 10px;
+  width: 100%;
+  height: 100%;
 }
 
 .contact-input{
   border: 1px solid black;
   background: none;
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  padding: 0.5rem 0.75rem;
 }
 
 .contact-input:focus{

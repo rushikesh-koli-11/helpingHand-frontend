@@ -3,17 +3,27 @@
 }
 
 #root{
-  height: 100vh;
+  min-height: 100vh;
+  width: 100%;
 }
+
 .app-raisefund{
   display: flex;
-  flex-direction: row;
-  height: 88%;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+}
+
+@media (min-width: 992px) {
+  .app-raisefund{
+    flex-direction: row;
+  }
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+  max-width: 100%;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -21,13 +31,24 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
+
 body {
-  margin: 0; 
+  margin: 0;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 .content {
   display: flex !important;
-  height: 100%;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+}
+
+@media (min-width: 992px) {
+  .content {
+    flex-direction: row;
+  }
 }
 
 .App-header {

@@ -41,9 +41,9 @@ const HomePageSecond = () => {
   return (
     <div>
       <Container className="fundraiser-page">
-        <Row>
-          <Col md={7}>
-            <h1>Start a Fundraiser in three simple steps</h1>
+        <Row className="align-items-center">
+          <Col xs={12} md={7}>
+            <h1 className="text-center text-md-start">Start a Fundraiser in three simple steps</h1>
             <div className="step home-page-2">
               <div className="icon home-page-2">🚀</div>
               <div className="contents-home-page-2">
@@ -102,40 +102,40 @@ const HomePageSecond = () => {
           are.
         </p>
         <div className="video-container my-4">
-          <iframe
-            width="560"
-            height="315"
-            src="https://www.youtube.com/embed/IOgqKLMPAVc?si=B7UyAfu2W3AE2hIm"
-            title="YouTube video player"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerPolicy="strict-origin-when-cross-origin"
-            allowFullScreen
-            style={{ border: "none" }}
-          ></iframe>
+          <div className="video-responsive">
+            <iframe
+              src="https://www.youtube.com/embed/IOgqKLMPAVc?si=B7UyAfu2W3AE2hIm"
+              title="YouTube video player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+              style={{ border: "none" }}
+            ></iframe>
+          </div>
         </div>
         <Row className="mt-5">
-          <Col md={3} className="text-center">
+          <Col xs={12} sm={6} md={3} className="text-center mb-4 mb-md-0">
             <div className="icon money" />
             <h5 className="head">It's Affordable</h5>
             <p className="para">
               No matter what you give, every donation will make an impact.
             </p>
           </Col>
-          <Col md={3} className="text-center">
+          <Col xs={12} sm={6} md={3} className="text-center mb-4 mb-md-0">
             <div className="icon public" />
             <h5 className="head">It's a Community</h5>
             <p className="para">
               Be part of an inspiring group, changing lives every month.
             </p>
           </Col>
-          <Col md={3} className="text-center">
+          <Col xs={12} sm={6} md={3} className="text-center mb-4 mb-md-0">
             <div className="icon love" />
             <h5 className="head">It's Transparent</h5>
             <p className="para">
               You'll receive regular updates on your donations.
             </p>
           </Col>
-          <Col md={3} className="text-center">
+          <Col xs={12} sm={6} md={3} className="text-center mb-4 mb-md-0">
             <div className="icon magic" />
             <h5 className="head">It's an Investment</h5>
             <p className="para">

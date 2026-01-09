@@ -2,14 +2,29 @@
     margin-top: 65px;
 }
 
+@media (max-width: 576px) {
+  .fixfromtop {
+    margin-top: 56px;
+  }
+}
+
 .main-button{
     color: white !important;
     background-color: #039695 !important;
     border: 0 !important;
     border-radius: 5px !important;
     height: 40px !important;
-    width: 300px !important;
+    width: 100% !important;
+    max-width: 300px !important;
     cursor: pointer;
+    font-size: clamp(0.9rem, 2vw, 1rem);
+    padding: 0.5rem 1rem !important;
+}
+
+@media (min-width: 576px) {
+  .main-button {
+    width: 300px !important;
+  }
 }
 
 .main-button:hover{
@@ -23,7 +38,15 @@
     border: 0 !important;
     border-radius: 5px !important;
     height: 50px !important;
+    width: 100% !important;
+    max-width: 150px !important;
+    font-size: clamp(0.9rem, 2vw, 1rem);
+}
+
+@media (min-width: 576px) {
+  .main-button-with-mediumsize {
     width: 150px !important;
+  }
 }
 
 .main-button-with-mediumsize:hover{
@@ -37,7 +60,15 @@ Button.submit-button{
     border: 0 !important;
     border-radius: 5px !important;
     height: 40px !important;
+    width: 100% !important;
+    max-width: 300px !important;
+    font-size: clamp(0.9rem, 2vw, 1rem);
+}
+
+@media (min-width: 576px) {
+  Button.submit-button {
     width: 300px !important;
+  }
 }
 
 Button.submit-button:hover{

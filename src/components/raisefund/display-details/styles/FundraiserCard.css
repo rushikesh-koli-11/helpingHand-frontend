@@ -4,51 +4,82 @@
     right: 10px;
     background-color: green;
     color: white;
-    padding: 5px 10px;
-    font-size: 12px;
+    padding: 4px 8px;
+    font-size: clamp(10px, 1.5vw, 12px);
     font-weight: bold;
     border-radius: 5px;
+    z-index: 10;
+  }
+
+  @media (min-width: 576px) {
+    .completed-label {
+      padding: 5px 10px;
+    }
   }
 
   .approved-label {
     position: absolute;
     background-color: green;
     color: white;
-    height: 30px;
-    padding: 5px 10px;
-    font-size: 12px;
+    height: 25px;
+    padding: 4px 8px;
+    font-size: clamp(10px, 1.5vw, 12px);
     font-weight: bold;
     border-radius: 5px;
-    margin-left: 286px;
+    top: 0;
+    right: 0;
     clip-path: polygon(0 0, 100% 0, 85% 50%, 100% 100%, 0 100%);
+    z-index: 10;
+  }
 
+  @media (min-width: 576px) {
+    .approved-label {
+      height: 30px;
+      padding: 5px 10px;
+    }
   }
 
   .rejected-label {
     position: absolute;
     background-color: red;
     color: white;
-    height: 30px;
-    padding: 5px 10px;
-    font-size: 12px;
+    height: 25px;
+    padding: 4px 8px;
+    font-size: clamp(10px, 1.5vw, 12px);
     font-weight: bold;
     border-radius: 5px;
-    margin-left: 295px;
+    top: 0;
+    right: 0;
     clip-path: polygon(0 0, 100% 0, 85% 50%, 100% 100%, 0 100%);
+    z-index: 10;
+  }
 
+  @media (min-width: 576px) {
+    .rejected-label {
+      height: 30px;
+      padding: 5px 10px;
+    }
   }
 
   .pending-label {
     position: absolute;
     background-color: rgb(226, 210, 30);
     color: black;
-    height: 30px;
-    padding: 5px 10px;
-    font-size: 12px;
+    height: 25px;
+    padding: 4px 8px;
+    font-size: clamp(10px, 1.5vw, 12px);
     font-weight: bold;
     border-radius: 5px;
-    margin-left: 295px;
+    top: 0;
+    right: 0;
     clip-path: polygon(0 0, 100% 0, 85% 50%, 100% 100%, 0 100%);
+    z-index: 10;
+  }
 
+  @media (min-width: 576px) {
+    .pending-label {
+      height: 30px;
+      padding: 5px 10px;
+    }
   }
   

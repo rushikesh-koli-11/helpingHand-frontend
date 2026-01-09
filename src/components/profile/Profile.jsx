@@ -43,8 +43,15 @@ const Profile = () => {
           API_ENDPOINTS.POST_PROFILE_PICTURE_BY_USERID(userId)
         );
         if (profileImageResponse.data) {
-          const base64String = `${profileImageResponse.data}`;
-          setPreviewUrl(base64String);
+          // Backend now returns Cloudinary URL (string) instead of Base64
+          const imageUrl = profileImageResponse.data;
+          // Check if it's already a URL or needs formatting
+          if (imageUrl.startsWith("http")) {
+            setPreviewUrl(imageUrl);
+          } else {
+            // Fallback for any edge cases
+            setPreviewUrl(imageUrl);
+          }
         }
       } catch (error) {
         console.error("Error fetching user data or profile image:", error);
@@ -92,13 +99,9 @@ const Profile = () => {
       );
 
       if (response.data && response.data.profilePicture) {
-        const base64String = `data:image/jpeg;base64,${btoa(
-          new Uint8Array(response.data.profilePicture).reduce(
-            (data, byte) => data + String.fromCharCode(byte),
-            ""
-          )
-        )}`;
-        setPreviewUrl(base64String);
+        // Backend now returns Cloudinary URL instead of byte array
+        const imageUrl = response.data.profilePicture;
+        setPreviewUrl(imageUrl);
       }
 
       Swal.fire("Success", "Profile uploaded successfully", "success");

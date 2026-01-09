@@ -1,24 +1,56 @@
 .fundraisers-container {
-    padding: 2rem;
+    padding: 1rem;
     margin-bottom: 30px;
     height: fit-content;
     width: 100%;
-    height: fit-content;
     background: rgb(255,250,250);
     background: linear-gradient(34deg, rgba(255,250,250,1) 0%, rgba(3,150,149,1) 100%);
   }
+
+  @media (min-width: 576px) {
+    .fundraisers-container {
+      padding: 1.5rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .fundraisers-container {
+      padding: 2rem;
+    }
+  }
   
   .page-title {
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     color: #333;
     text-align: center;
     font-weight: bold;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+  }
+
+  @media (min-width: 768px) {
+    .page-title {
+      margin-bottom: 2rem;
+    }
   }
   
   .fundraiser-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 2rem;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  @media (min-width: 576px) {
+    .fundraiser-grid {
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .fundraiser-grid {
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+    }
   }
   
   .fundraiser-card {
@@ -100,28 +132,33 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    margin-bottom: 20px;
-    padding: 10px;
+    margin-bottom: 1.5rem;
+    padding: 0.5rem;
   }
 
-  .search-container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-    padding: 10px;
+  @media (min-width: 768px) {
+    .search-container {
+      margin-bottom: 20px;
+      padding: 10px;
+    }
   }
 
 .search-input {
-  width: 80%; 
+  width: 100%; 
   max-width: 500px; 
-  padding: 12px 15px; 
-  font-size: 16px; 
+  padding: 10px 15px; 
+  font-size: clamp(14px, 2vw, 16px); 
   border: 1px solid #039695; 
   border-radius: 25px; 
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
   outline: none; 
   transition: all 0.3s ease; 
+}
+
+@media (min-width: 576px) {
+  .search-input {
+    padding: 12px 15px;
+  }
 }
 
 .search-input:focus {
@@ -132,6 +169,19 @@
 .search-input::placeholder {
   color: #03969690;
   font-style: italic; 
+}
+
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  padding: 1rem;
+}
+
+@media (min-width: 768px) {
+  .pagination-container {
+    margin-top: 3rem;
+  }
 }
   
   @keyframes fadeIn {
@@ -145,12 +195,7 @@
   
   .fundraiser-card {
     animation: fadeIn 0.5s ease-in-out;
-  }
-  
-  @media (max-width: 600px) {
-    .fundraiser-grid {
-      grid-template-columns: 1fr;
-    }
+    width: 100%;
   }
   
   

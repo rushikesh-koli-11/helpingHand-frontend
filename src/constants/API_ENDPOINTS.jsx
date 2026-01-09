@@ -31,9 +31,9 @@ const API_ENDPOINTS = {
   GET_PATIENT_VERIFICATIONS: `${BASE_URL}/patient-verifications`,
 
   //medical-documents
-  // Backend routes: GET /medical-documents/{fundraiserId} and PUT /medical-documents/{fundraiserId}
-  GET_MEDICAL_DOCUMENTS_BY_FUNDRAISERID: (fundraiserId) => `${BASE_URL}/medical-documents/${fundraiserId}`,
-  UPDATE_MEDICAL_DOCUMENTS_BY_FUNDRAISERID: (fundraiserId) => `${BASE_URL}/medical-documents/${fundraiserId}`,
+  // Backend routes: GET /medical-documents/fetch/{fundraiserId} and PUT /medical-documents/update/{fundraiserId}
+  GET_MEDICAL_DOCUMENTS_BY_FUNDRAISERID: (fundraiserId) => `${BASE_URL}/medical-documents/fetch/${fundraiserId}`,
+  UPDATE_MEDICAL_DOCUMENTS_BY_FUNDRAISERID: (fundraiserId) => `${BASE_URL}/medical-documents/update/${fundraiserId}`,
   UPLOAD_MEDICAL_DOCUMENTS: `${BASE_URL}/medical-documents/upload`,
   POST_HOSPITAL_DETAILS: `${BASE_URL}/hospital-details`,
 

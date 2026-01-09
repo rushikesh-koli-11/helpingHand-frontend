@@ -60,11 +60,14 @@ const ViewFundraisers = () => {
 
             fundraiserDetailsResponse.data.forEach((data) => {
               if (data.coverPicture) {
-                const base64String = `data:image/jpeg;base64,${data.coverPicture}`;
-                coverPicturesMap[data.id] = base64String;
+                // Backend now returns Cloudinary URL instead of Base64
+                const imageUrl = data.coverPicture.startsWith("http") 
+                  ? data.coverPicture 
+                  : data.coverPicture; // Already a URL from Cloudinary
+                coverPicturesMap[data.fundraiserId || data.id] = imageUrl;
               }
               if (data.remainingAmount !== undefined) {
-                collectedAmountMap[data.id] = data.remainingAmount;
+                collectedAmountMap[data.fundraiserId || data.id] = data.remainingAmount;
               }
             });
             setCollectedAmounts(collectedAmountMap);
@@ -92,11 +95,14 @@ const ViewFundraisers = () => {
         const coverPicturesMap = {};
         fundraiserDetailsResponse.data.forEach((data) => {
           if (data.coverPicture) {
-            const base64String = `data:image/jpeg;base64,${data.coverPicture}`;
-            coverPicturesMap[data.id] = base64String;
+            // Backend now returns Cloudinary URL instead of Base64
+            const imageUrl = data.coverPicture.startsWith("http") 
+              ? data.coverPicture 
+              : data.coverPicture; // Already a URL from Cloudinary
+            coverPicturesMap[data.fundraiserId || data.id] = imageUrl;
           }
           if (data.remainingAmount !== undefined) {
-            collectedAmountMap[data.id] = data.remainingAmount;
+            collectedAmountMap[data.fundraiserId || data.id] = data.remainingAmount;
           }
         });
         setCollectedAmounts(collectedAmountMap);
