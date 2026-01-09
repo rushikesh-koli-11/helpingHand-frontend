@@ -1,0 +1,73 @@
+.social-post-gradient-background {
+    background: linear-gradient(135deg, #78f7f7, #039695);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+  }
+  
+  .social-post-card {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    max-width: 600px;
+    width: 100%;
+  }
+  
+  .social-post-title {
+    color: #039695;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+  
+  .styled-button {
+    padding: 10px;
+    background-color: #039695 !important;
+    color: white !important;
+  }
+  
+  .styled-button:hover {
+    background-color: #017373;
+  }
+  
+  .post-content {
+    margin: 20px 0;
+    height: 300px;
+    width: 100%;
+    border: 2px solid #039695;
+    border-radius: 10px;
+    padding: 15px;
+    overflow: auto;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    background-color: #f0f8ff;
+    font-family: "Arial", sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  
+  .animate__animated {
+    animation-duration: 1s;
+  }
+  
+  .social-post-btn {
+    transition: all 0.3s ease;
+  }
+  
+  .social-post-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .shadow-sm {
+    transition: all 0.3s ease;
+  }
+  
+  .shadow-sm:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  

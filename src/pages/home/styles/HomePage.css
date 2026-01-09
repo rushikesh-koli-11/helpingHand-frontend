@@ -1,0 +1,19 @@
+.green-text{
+  color: #039695;
+}
+
+.light-text{
+  color: rgba(0, 0, 0, 0.53);
+  font-weight: 700;
+}
+
+.btn{
+  background-color: #039695;
+  width: max-content;
+  padding: 10px;
+}
+
+.btn:hover{
+  background: hsl(var(--mf1-color-primary-light-hsl));
+}
+

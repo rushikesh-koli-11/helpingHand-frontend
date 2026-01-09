@@ -1,0 +1,7 @@
+.Generate-social-media-button:disabled {
+    background-color: #ccc !important; 
+    color: #666 !important; 
+    cursor: not-allowed !important;
+    opacity: 0.6;
+  }
+  

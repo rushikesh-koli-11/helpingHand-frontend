@@ -1,0 +1,49 @@
+.contact-container {
+  border-radius: 10px;
+  background: rgb(255,255,255);
+  background: linear-gradient(31deg, rgba(255,255,255,1) 0%, rgb(99, 255, 255) 99%);
+  height: fit-content;
+}
+
+.info-box {
+  background: #ffffff14;
+  padding: 15px;
+  border: 1px solid black;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+}
+
+.info-box:hover {
+  transform: translateY(-5px);
+}
+
+.info-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.info-icon {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.info-title {
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.map-container iframe {
+  border-radius: 10px;
+}
+
+.contact-input{
+  border: 1px solid black;
+  background: none;
+}
+
+.contact-input:focus{
+  outline: 2px solid #039695; 
+  background: none;
+}

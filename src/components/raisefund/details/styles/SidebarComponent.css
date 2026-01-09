@@ -1,0 +1,17 @@
+.cdb-sidebar-content .cdb-sidebar-menu-item {
+    transition: background-color 0.3s ease; 
+  }
+  
+  .cdb-sidebar-content .cdb-sidebar-menu-item:hover {
+    background-color: #026e64; 
+    color: #fff; 
+    border-radius: 5px; 
+  }
+
+  .activeClicked > li{
+    color: white !important;
+    background-color: #039695 !important;
+  }
+
+
+ 

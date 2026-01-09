@@ -1,0 +1,71 @@
+{
+  "name": "helpinghands",
+  "version": "0.1.0",
+  "private": true,
+  "proxy": "http://localhost:8080",
+  "dependencies": {
+    "@babel/plugin-transform-private-property-in-object": "^7.25.9",
+    "@emailjs/browser": "^4.4.1",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@mui/icons-material": "^6.4.0",
+    "@mui/material": "^6.4.0",
+    "@react-oauth/google": "^0.12.1",
+    "@stripe/react-stripe-js": "^3.1.1",
+    "@stripe/stripe-js": "^5.5.0",
+    "animate.css": "^4.1.1",
+    "axios": "^1.7.9",
+    "bootstrap": "^5.3.3",
+    "cdbreact": "^1.5.19",
+    "cra-template": "1.2.0",
+    "framer-motion": "^12.0.5",
+    "jquery": "^3.7.1",
+    "lucide-react": "^0.474.0",
+    "popper.js": "^1.16.1",
+    "react": "^19.0.0",
+    "react-bootstrap": "^2.10.8",
+    "react-bootstrap-icons": "^1.11.5",
+    "react-confetti": "^6.2.2",
+    "react-cookie": "^7.2.2",
+    "react-dom": "^19.0.0",
+    "react-hook-form": "^7.54.2",
+    "react-icons": "^5.4.0",
+    "react-pro-sidebar": "^0.7.1",
+    "react-router-dom": "^7.1.1",
+    "react-scripts": "5.0.1",
+    "react-toastify": "^11.0.3",
+    "react-youtube": "^10.1.0",
+    "sass": "^1.83.4",
+    "styled-components": "^6.1.14",
+    "sweetalert2": "^11.15.10",
+    "web-vitals": "^4.2.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "autoprefixer": "^10.4.20"
+  }
+}

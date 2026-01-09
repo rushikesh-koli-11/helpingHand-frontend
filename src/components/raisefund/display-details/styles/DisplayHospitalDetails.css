@@ -1,0 +1,42 @@
+.hospital-details-card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .hospital-details-card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .detail-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+  }
+  
+  .detail-icon {
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    color: #039695;
+    min-width: 30px;
+    text-align: center;
+  }
+  
+  .detail-label {
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+    color: #495057;
+  }
+  
+  .detail-value {
+    font-size: 1rem;
+    margin-bottom: 0;
+    word-break: break-word;
+  }
+  
+  @media (max-width: 767px) {
+    .detail-item {
+      margin-bottom: 1.5rem;
+    }
+  }
+  
+  

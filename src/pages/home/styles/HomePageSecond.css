@@ -1,0 +1,292 @@
+.fundraiser-page {
+    padding: 30px;
+    background: url('../../../images/home-2.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+    max-width: 1440px;
+    height: 100vh;
+  }
+  
+  .step {
+    display: flex;
+    align-items: center;
+  }
+  
+  .home-page-2{
+    height: fit-content;
+  }
+
+  .contents-home-page-2{
+    height: fit-content;
+  }
+  .icon {
+    font-size: 2rem;
+    margin-right: 15px;
+  }
+  
+  .content {
+    flex-grow: 1;
+  }
+  
+  .start-button {
+    margin-top: 20px;
+    background-color: #039695;
+    border: none;
+  }
+
+  .start-button:hover{
+    background: hsl(var(--mf1-color-primary-light-hsl));
+  }
+  
+  .mockup {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #fff;
+  }
+  
+  .mockup-content p {
+    margin-bottom: 10px;
+  }
+  
+  .save-button {
+    margin-top: 10px;
+    background-color: #039695;
+    border: none;
+  }
+
+  h3{
+    color: #039695;
+  }
+
+  .light-para{
+    color: rgba(0, 0, 0, 0.50);
+  }
+
+  .green-text {
+    color: #039695;
+  }
+
+  .home-page {
+    padding: 20px;
+  }
+  
+  .video-container {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+  }
+  
+  .head {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .para {
+    font-size: 14px;
+  }
+
+  .magic{
+    background: url('../../../images/logos/magic.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .love{
+    background: url('../../../images/logos/love.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .money{
+    background: url('../../../images/logos/piggybank.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .public{
+    background: url('../../../images/logos/public.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .text-center{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* 3 */
+
+ /* ImpactPage.css */
+.impact-section {
+    text-align: center;
+    padding: 50px 0;
+  }
+  
+  .header-section {
+    background-color: #039695;
+    color: white;
+  }
+  
+  .card {
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: 100%;
+  }
+  
+  .card-body img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .card-container{
+    display: flex;
+    flex-direction: row;
+  }
+  .my-5 {
+    margin-top: 0 !important;
+    /* margin-bottom: 0 !important; */
+    
+}
+
+.cardHeight{
+    padding: 10px;
+    margin: 10px;
+    height: 140px;
+}
+
+.container-fluid{
+    background-color: #039695;
+}
+
+.info-about-whoarewe{
+    font-size: medium;
+    color: rgba(0, 0, 0, 0.50);
+}
+  
+
+/* featured-in-section */
+/* FeaturedIn.css */
+.featured-in-section {
+    text-align: center;
+    padding: 20px 0;
+    margin-bottom: 10px;
+    width: 1100px;
+  }
+  
+
+/* FeaturedIn.css */
+.featured-in-section {
+    opacity: 1;
+    transform: translateY(50px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+    margin-bottom: 20px;
+    height: 200px;
+  }
+  
+  .featured-in-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  
+
+  
+  .featured-in-title::after {
+    content: '';
+    display: block;
+    width: 165px;
+    height: 3px;
+    background-color: #ffc107;
+    margin: 10px auto 0;
+  }
+  
+  .featured-image{
+    padding: 5px;
+    margin: 5px;
+    width: 700px;
+    border: 1px solid black;
+    border-top: 5px solid;
+    border-bottom: 5px solid; 
+  border-image: linear-gradient(
+    to right, 
+    rgba(3, 150, 149, 0), 
+    rgba(3, 150, 149, 1), 
+    rgba(3, 150, 149, 0)
+  ) 1;
+
+  .border-gradient-bottom {
+    border-bottom: 5px solid; /* Bottom border */
+    border-image-source: linear-gradient(
+      to right, 
+      rgba(3, 150, 149, 0),
+      rgba(3, 150, 149, 1), 
+      rgba(3, 150, 149, 0)
+    );
+    border-image-slice: 1;
+  }
+}
+
+/* Footer.css */
+.footer{
+    padding: 30px 180px;
+    background-color: #003e3e;
+}
+
+.footer h5 {
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+  
+  .footer p,
+  .footer ul,
+  .footer a {
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+  
+  .footer .social-icons a {
+    color: white;
+    margin-right: 10px;
+    font-size: 18px;
+  }
+  
+  .footer .payment-icon {
+    height: auto;
+    margin: 0 10px;
+  }
+  
+  .footer .list-unstyled {
+    padding-left: 0;
+    list-style: none;
+  }
+
+  .list-unstyled{
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    font-size: smaller;
+  }
+  
+  .footer-details{
+    font-size: smaller;
+  }
+
+  .social-icons{
+    display: flex;
+    gap: 10px;
+  }
+  
+  

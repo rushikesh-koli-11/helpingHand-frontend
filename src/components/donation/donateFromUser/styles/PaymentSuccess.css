@@ -1,0 +1,74 @@
+.payment-success-container {
+    background-color: #f4f7fb;
+    position: relative;
+  }
+  
+  .success-page-container{
+    background-color: #90ee908c;;
+  }
+
+  .success-icon {
+    font-size: 80px;
+    color: #28a745;
+  }
+  
+  .payment-success-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+  }
+  
+  .payment-success-card .card-title {
+    font-size: 1.8rem;
+    color: #28a745;
+    font-weight: bold;
+  }
+  
+  .payment-success-card .card-text {
+    font-size: 1.2rem;
+    color: #555;
+  }
+  
+  .success-donation-amount {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #28a745;
+  }
+  
+  .payment-success-button {
+    margin-top: 20px;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  .success-toast {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #28a745;
+    color: white;
+    border-radius: 5px;
+    z-index: 1050; 
+  }
+
+  .payment-success-container{
+    margin: 0;
+  }
+  
+  /* Confetti animation styling */
+.confetti {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10; 
+}
+  
+  .min-vh-100 {
+    min-height: 100vh;
+  }
+  

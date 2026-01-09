@@ -1,0 +1,87 @@
+.fundraiser-updates {
+    max-width: 800px;
+    margin: auto;
+    padding-top: 20px; /* Adds space at the top */
+    padding-bottom: 20px; /* Adds space at the bottom */
+}
+
+.timeline {
+    position: relative;
+    padding: 40px 0; /* Space above and below the timeline */
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    top: 20px; /* Adds spacing at the top */
+    bottom: 20px; /* Adds spacing at the bottom */
+    left: 40px; /* Keeps line on the left */
+    width: 2px;
+    background: #039695;
+}
+
+.timeline-item {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-bottom: 30px;
+    position: relative;
+    width: 100%;
+}
+
+.timeline-content {
+    background: #00e4e32e;
+    border: 1px solid #039695;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    transition: all 0.3s ease;
+    margin-left: 80px; /* Moves content to the right */
+    width: calc(100% - 100px); /* Ensures it doesn’t overlap the line */
+}
+
+.timeline-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    top: 20px;
+    left: 32px; /* Positions circle correctly */
+    width: 16px;
+    height: 16px;
+    background: #ffffff;
+    border: 3px solid #039695;
+    border-radius: 50%;
+}
+
+.date {
+    font-weight: bold;
+    color: #039695;
+    margin-bottom: 10px;
+}
+
+.time {
+    display: block;
+    font-size: 0.8em;
+    color: #00ffff;
+    margin-top: 10px;
+}
+
+@media (max-width: 767px) {
+    .timeline::before {
+        left: 20px; /* Adjust for smaller screens */
+    }
+
+    .timeline-content {
+        margin-left: 50px;
+        width: calc(100% - 70px);
+    }
+
+    .timeline-item::before {
+        left: 12px;
+    }
+}

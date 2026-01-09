@@ -1,0 +1,50 @@
+.fundraiser-details-page {
+  min-height: 100vh;
+  padding-bottom: 2rem;
+}
+
+.display-fundraiser-details-card {
+  box-shadow: #007bff;
+}
+
+.display-fundraiser-details-card-title {
+  color: #007bff;
+  font-weight: bold;
+}
+
+.text-primary {
+  color: #007bff !important;
+}
+
+.text-success {
+  color: #28a745 !important;
+}
+
+.admin-operation-btn{
+  height: 100px;
+}
+
+.admin-actions button,
+.btn-lg {
+  padding: 0.75rem 2rem;
+  font-size: 1.1rem;
+}
+
+.reject-btn{
+  color: white;
+  background-color: red;
+  border: none;
+  border-radius: 5px;
+  height: 50px;
+  width: 150px;
+}
+
+.reject-btn:hover{
+  background-color: rgb(81, 0, 0);
+}
+
+.fundraiser-details-information{
+  display: flex;
+  align-items: first baseline;
+  gap: 5px;
+}

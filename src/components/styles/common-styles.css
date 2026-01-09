@@ -1,0 +1,55 @@
+.fixfromtop{
+    margin-top: 65px;
+}
+
+.main-button{
+    color: white !important;
+    background-color: #039695 !important;
+    border: 0 !important;
+    border-radius: 5px !important;
+    height: 40px !important;
+    width: 300px !important;
+    cursor: pointer;
+}
+
+.main-button:hover{
+    color: white !important;
+    background-color: #006363 !important;
+}
+
+.main-button-with-mediumsize{
+    color: white !important; 
+    background-color: #039695 !important;
+    border: 0 !important;
+    border-radius: 5px !important;
+    height: 50px !important;
+    width: 150px !important;
+}
+
+.main-button-with-mediumsize:hover{
+    color: white !important;
+    background-color: #006363 !important;
+}
+
+Button.submit-button{
+    color: white !important;
+    background-color:rgb(0, 165, 0) !important;
+    border: 0 !important;
+    border-radius: 5px !important;
+    height: 40px !important;
+    width: 300px !important;
+}
+
+Button.submit-button:hover{
+    background-color: green !important;
+}
+
+.theme-colour{
+    color: white;
+    background-color: #039695;
+}
+
+.theme-colour:hover{
+    color: white;
+    background-color: #007373;
+}

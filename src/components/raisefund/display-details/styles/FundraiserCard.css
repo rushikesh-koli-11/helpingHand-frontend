@@ -1,0 +1,54 @@
+.completed-label {
+    position: absolute;
+    top: 7px;
+    right: 10px;
+    background-color: green;
+    color: white;
+    padding: 5px 10px;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 5px;
+  }
+
+  .approved-label {
+    position: absolute;
+    background-color: green;
+    color: white;
+    height: 30px;
+    padding: 5px 10px;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-left: 286px;
+    clip-path: polygon(0 0, 100% 0, 85% 50%, 100% 100%, 0 100%);
+
+  }
+
+  .rejected-label {
+    position: absolute;
+    background-color: red;
+    color: white;
+    height: 30px;
+    padding: 5px 10px;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-left: 295px;
+    clip-path: polygon(0 0, 100% 0, 85% 50%, 100% 100%, 0 100%);
+
+  }
+
+  .pending-label {
+    position: absolute;
+    background-color: rgb(226, 210, 30);
+    color: black;
+    height: 30px;
+    padding: 5px 10px;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-left: 295px;
+    clip-path: polygon(0 0, 100% 0, 85% 50%, 100% 100%, 0 100%);
+
+  }
+  
