@@ -15,6 +15,10 @@
   background-position: center !important;
   background-repeat: no-repeat !important;
   background-attachment: scroll !important;
+  -webkit-background-size: cover !important;
+  -webkit-background-position: center !important;
+  -moz-background-size: cover !important;
+  -moz-background-position: center !important;
 }
 
 @media (max-width: 767px) {
@@ -25,9 +29,13 @@
     align-items: center !important;
     justify-content: center !important;
     background-size: cover !important;
-    background-position: center !important;
+    background-position: center center !important;
     background-repeat: no-repeat !important;
     background-attachment: scroll !important;
+    -webkit-background-size: cover !important;
+    -webkit-background-position: center center !important;
+    -moz-background-size: cover !important;
+    -moz-background-position: center center !important;
   }
 }
 
@@ -53,7 +61,7 @@
 
 @media (max-width: 767px) {
   .home-banner-overlay {
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.3);
     display: block !important;
   }
 }

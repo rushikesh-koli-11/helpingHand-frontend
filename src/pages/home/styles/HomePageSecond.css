@@ -9,21 +9,29 @@
     width: 100%;
     overflow-x: hidden;
     position: relative;
+    -webkit-background-size: cover !important;
+    -webkit-background-position: center !important;
+    -moz-background-size: cover !important;
+    -moz-background-position: center !important;
   }
 
   @media (max-width: 575px) {
     .fundraiser-page {
       padding: 1rem 0.75rem;
       background-size: cover !important;
-      background-position: center !important;
+      background-position: center center !important;
       background-repeat: no-repeat !important;
-      min-height: auto;
+      min-height: 70vh;
+      -webkit-background-size: cover !important;
+      -moz-background-size: cover !important;
     }
   }
 
   @media (min-width: 576px) {
     .fundraiser-page {
       padding: 1.5rem;
+      background-size: cover !important;
+      background-position: center !important;
     }
   }
 
@@ -235,14 +243,14 @@
 
   .video-responsive {
     position: relative;
-    padding-bottom: 25%; /* 4:1 aspect ratio - very wide horizontal rectangle */
+    padding-bottom: 56.25%; /* 16:9 aspect ratio - standard rectangle */
     height: 0;
     overflow: hidden;
-    max-width: 500px;
+    max-width: 700px;
     width: 100%;
     margin: 0 auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
   }
 
   .video-responsive iframe {
@@ -252,21 +260,21 @@
     width: 100%;
     height: 100%;
     border: none;
-    border-radius: 8px;
+    border-radius: 12px;
   }
 
-  /* Ensure horizontal rectangle shape on all screen sizes */
+  /* Ensure proper rectangle shape on all screen sizes */
   @media (max-width: 575px) {
     .video-responsive {
-      padding-bottom: 25%; /* Maintain very wide horizontal rectangle */
-      max-width: 400px;
+      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      max-width: 100%;
     }
   }
 
   @media (min-width: 576px) {
     .video-responsive {
-      padding-bottom: 25%; /* Maintain very wide horizontal rectangle */
-      max-width: 450px;
+      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      max-width: 500px;
     }
   }
 
@@ -275,15 +283,15 @@
       padding: 0;
     }
     .video-responsive {
-      padding-bottom: 25%; /* Maintain very wide horizontal rectangle */
-      max-width: 500px;
+      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      max-width: 600px;
     }
   }
 
   @media (min-width: 992px) {
     .video-responsive {
-      padding-bottom: 25%; /* Maintain very wide horizontal rectangle */
-      max-width: 550px;
+      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      max-width: 700px;
     }
   }
 
